@@ -1,0 +1,101 @@
+/* Theme Toggle Styles */
+:root {
+  /* Dark theme colors - improved for readability */
+  --dark-bg: #121212;
+  --dark-content-primary: #e4e4e4;
+  --dark-content-secondary: #b0b0b0;
+  --dark-code-background: #1e1e1e;
+  --dark-code-border: #333333;
+  --dark-link: #90caf9;
+  --dark-link-hover: #bbdefb;
+  --dark-border: #333333;
+  --dark-blockquote-bg: #1e1e1e;
+  --dark-blockquote-border: #424242;
+  
+  /* Light theme colors */
+  --light-bg: #ffffff;
+  --light-content-primary: #222222;
+  --light-content-secondary: #666666;
+  --light-code-background: #f5f5f5;
+  --light-code-border: #e0e0e0;
+  --light-link: #1976d2;
+  --light-link-hover: #1565c0;
+  --light-border: #e0e0e0;
+  --light-blockquote-bg: #f9f9f9;
+  --light-blockquote-border: #e0e0e0;
+}
+
+/* Light theme (default) */
+:root[data-theme="light"] {
+  --background: var(--light-bg);
+  --content-primary: var(--light-content-primary);
+  --content-secondary: var(--light-content-secondary);
+  --code-background: var(--light-code-background);
+  --code-border: var(--light-code-border);
+  --link-color: var(--light-link);
+  --link-hover-color: var(--light-link-hover);
+  --border-color: var(--light-border);
+  --blockquote-bg: var(--light-blockquote-bg);
+  --blockquote-border: var(--light-blockquote-border);
+}
+
+/* Dark theme */
+:root[data-theme="dark"] {
+  --background: var(--dark-bg);
+  --content-primary: var(--dark-content-primary);
+  --content-secondary: var(--dark-content-secondary);
+  --code-background: var(--dark-code-background);
+  --code-border: var(--dark-code-border);
+  --link-color: var(--dark-link);
+  --link-hover-color: var(--dark-link-hover);
+  --border-color: var(--dark-border);
+  --blockquote-bg: var(--dark-blockquote-bg);
+  --blockquote-border: var(--dark-blockquote-border);
+}
+
+/* Theme toggle button styles */
+.theme-toggle {
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  border: none;
+  background: none;
+  color: var(--content-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: none;
+  margin-left: 10px;
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Smooth transition between themes */
+body, html, :root {
+  transition: none;
+}
+
+a, button, input, textarea, pre, code, blockquote, .header, .content, .main, * {
+  transition: none;
+}
+
+/* Dark mode enhancements */
+
+
+:root[data-theme="dark"] img {
+  filter: brightness(0.9) contrast(1.1);
+  transition: none;
+}
+
+/* Dark mode link styling - only for post content */
+:root[data-theme="dark"] .single-content a {
+  text-decoration-color: rgba(255, 165, 89, 0.6);
+}
+
+:root[data-theme="dark"] .single-content a:hover {
+  color: #ff9d45;
+  text-decoration-color: #ff9d45;
+}

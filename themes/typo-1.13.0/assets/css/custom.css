@@ -1,0 +1,6 @@
+/* Place custom css here */
+body {
+    direction: rtl;
+    text-align: right;
+    font-weight: normal !important;
+}

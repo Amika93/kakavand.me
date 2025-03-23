@@ -1,0 +1,80 @@
+baseURL = 'https://kakavand.me/'
+languageCode = 'fa-IR'
+defaultContentLanguage = "fa"
+title = 'نوشته‌های امین کاکاوند'
+theme = "typo-1.13.0"
+
+[taxonomies]
+tag = 'tags'
+
+[params]
+# Meta description
+description = "بهترین وبلاگ امین کاکاوند در سطح اینترنت"
+
+# Appearance settings
+theme = 'auto'
+colorPalette = 'default'
+hideHeader = false
+
+# Intro on main page, content is markdown
+homeIntroTitle = 'سلام...'
+homeIntroContent = """
+به **بهترین وبلاگ امین کاکاوند** در اینترنت خوش اومدید!
+
+من امین کاکاوند هستم و در این وبلاگ در مورد استراتژی، کسب و کار، تکنولوژی، محصول و چیزهای دیگه می‌نویسم.
+"""
+
+# Collection to display on home
+homeCollectionTitle = 'نوشته‌ها'
+homeCollection = 'posts'
+
+# Lists parameters
+paginationSize = 100
+listSummaries = true
+listDateFormat = '2 Jan 2006'
+
+# Breadcrumbs
+breadcrumbs = false
+
+# Social icons
+
+[[params.social]]
+name = "Youtube"
+url = "https://www.youtube.com/@Amin.Kakavand"
+
+[[params.social]]
+name = "X"
+url = "https://x.com/aminkakavand/"
+
+[[params.social]]
+name = "Instagram"
+url = "https://www.instagram.com/kakavand.me/"
+
+[[params.social]]
+name = "linkedin"
+url = "https://www.linkedin.com/in/aminkakavand/"
+
+# Main menu pages
+[[params.menu]]
+name = "خانه"
+url = "/"
+
+[[params.menu]]
+name = "درباره من"
+url = "/about"
+
+# Syntax highligth on code blocks
+[markup]
+[markup.highlight]
+style = 'algol'
+
+# Giscus comments
+[params.giscus]
+enable = true
+repo = "aminkakavand/kakavand.me"
+repoid = "R_kgDOLjXpgw"
+category = "Comments"
+categoryid = "DIC_kwDOLjXpg84CcYFl"
+mapping = "pathname"
+theme = "preferred_color_scheme"
+

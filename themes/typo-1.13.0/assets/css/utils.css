@@ -1,0 +1,21 @@
+.flex {
+    display: flex;
+    font-weight: normal;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.small {
+    font-size: medium;
+    font-weight: normal;
+}
+
+.monospace {
+    font-family: "Ravi";
+}

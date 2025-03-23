@@ -1,0 +1,29 @@
+{{ if and (.Param "toc") (not .IsHome) }}
+<div class="toc-container">
+    <div class="toc-controls">
+        <button class="toc-button" aria-label="Toggle table of contents">
+            <span class="current-section-title">فهرست</span>
+            <span class="button-separator"></span>
+            <svg class="next-section-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+        </button>
+        
+        <button class="scroll-top-button" aria-label="Scroll to top">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+            <svg class="progress-circle" width="40" height="40" viewBox="0 0 40 40">
+                <circle class="progress-circle-bg" cx="20" cy="20" r="18" fill="none" stroke-width="3"></circle>
+                <circle class="progress-circle-value" cx="20" cy="20" r="18" fill="none" stroke-width="3" stroke-dasharray="113.097" stroke-dashoffset="113.097"></circle>
+            </svg>
+        </button>
+    </div>
+    
+    <div class="toc-content">
+        <h3>فهرست</h3>
+        {{ .TableOfContents }}
+    </div>
+</div>
+{{ end }}

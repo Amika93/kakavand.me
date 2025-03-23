@@ -1,0 +1,61 @@
+baseURL = 'https://example.org/'
+languageCode = 'fa-IR'
+title = 'typo'
+
+# Google analytics code
+googleAnalytics = "G-xxxxxxxxx"
+
+[params]
+
+# Appearance settings
+theme = 'auto'
+colorPalette = 'default'
+hideHeader = false
+
+# Intro on main page, content is markdown
+homeIntroTitle = 'سلام!'
+homeIntroContent = """
+من امین کاکاوند هستم و در این وبلاگ در مورد استراتژی، کسب و کار، محصول و چیزهای دیگه می‌نویسم.
+"""
+
+# Collection to display on home
+homeCollectionTitle = 'نوشته‌ها'
+homeCollection = 'نوشته‌ها'
+
+# Lists parameters
+paginationSize = 100
+listSummaries = true
+listDateFormat = '2 Jan 2006'
+
+# Breadcrumbs
+breadcrumbs = true
+
+# Social icons
+[[params.social]]
+name = "linkedin"
+url = "https://www.linkedin.com/in/user/"
+
+
+# Main menu pages
+[[params.menu]]
+name = "خانه"
+url = "/"
+
+[[params.menu]]
+name = "درباره من"
+url = "/about"
+
+# Syntax highligth on code blocks
+[markup]
+[markup.highlight]
+style = 'algol'
+
+# Giscus comments
+[params.giscus]
+enable = true
+repo = "user/repo"
+repoid = "repoId"
+category = "General"
+categoryid = "categoryId"
+mapping = "pathname"
+theme = "preferred_color_scheme"
