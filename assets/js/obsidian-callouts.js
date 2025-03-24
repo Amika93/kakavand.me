@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add a collapse/expand indicator
         const indicator = document.createElement('span');
         indicator.className = 'callout-fold';
-        indicator.textContent = isCollapsed ? '▶' : '▼';
+        indicator.textContent = isCollapsed ? '◀' : '▼';
         indicator.style.marginLeft = '0.5rem';
         indicator.style.fontSize = '0.8rem';
         titleDiv.appendChild(indicator);

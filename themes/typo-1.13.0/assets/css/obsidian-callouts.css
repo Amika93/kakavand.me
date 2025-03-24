@@ -9,17 +9,17 @@
   background-color: var(--callout-background);
   overflow: hidden;
   font-size: var(--p-font-size);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 3px 10px -3px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 3px 10px -3px rgba(0, 0, 0, 0.1); */
 }
 
 .callout-title {
   display: flex;
   align-items: center;
-  padding: 0.8rem 1rem;
+  padding: 0.8rem 1rem 0 0.8rem;
   font-weight: 600;
   margin: 0;
   color: var(--callout-title-color);
-  background-color: var(--callout-title-background);
+  background-color: var(--callout-content-background);
   border-bottom: 1px solid var(--callout-border-color);
 }
 
@@ -31,12 +31,12 @@
   display: inline-flex;
   align-items: center;
   margin-left: 0;
-  margin-right: 0.5rem;
+  margin-right: 0rem;
   font-size: 1.1em;
 }
 
 .callout-content {
-  padding: 0.8rem 1rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
   background-color: var(--callout-content-background);
 }
 
@@ -53,15 +53,15 @@
   /* Base colors */
   --callout-background: transparent;
   --callout-border-opacity: 0.25;
-  --callout-title-opacity: 0.1;
+  --callout-title-opacity: 0.05;
   --callout-content-opacity: 0.05;
 
   /* Note */
-  --callout-note-color: #0070BB;
-  --callout-note-title-background: rgba(0, 112, 187, var(--callout-title-opacity));
-  --callout-note-content-background: rgba(0, 112, 187, var(--callout-content-opacity));
-  --callout-note-border-color: rgba(0, 112, 187, var(--callout-border-opacity));
-  --callout-note-title-color: #0070BB;
+  --callout-note-color: #0d4dff;
+  --callout-note-title-background: rgba(13,77, 255, var(--callout-title-opacity));
+  --callout-note-content-background: rgba(13,77, 255, var(--callout-content-opacity));
+  --callout-note-border-color: rgba(13,77, 255, var(--callout-border-opacity));
+  --callout-note-title-color: #0d4dff;
 
   /* Abstract/Summary/TLDR */
   --callout-abstract-color: #00B0FF;
@@ -144,7 +144,7 @@
 /* Dark mode colors */
 :root[data-theme="dark"] {
   --callout-border-opacity: 0.3;
-  --callout-title-opacity: 0.2;
+  --callout-title-opacity: 0.1;
   --callout-content-opacity: 0.1;
 
   /* Note */

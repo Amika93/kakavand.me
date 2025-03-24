@@ -44,7 +44,7 @@ p {
   margin-top: var(--p-margin-top);
   margin-bottom: var(--p-margin-bottom);
   font-size: var(--p-font-size);
-  font-weight: 400;
+  font-weight: 300;
   line-height: var(--p-line-height);
 }
 
@@ -55,6 +55,7 @@ ul {
 
 li {
   margin-left: var(--li-indent);
+  margin-right: var(--li-indent);
 }
 
 /* Basic link styling without underlines */

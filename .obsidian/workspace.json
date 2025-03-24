@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/about.md",
+                "file": "content/posts/callout-test/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "about"
+              "title": "index"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/about.md",
+                "file": "content/posts/callout-test/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for about"
+              "title": "Backlinks for index"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/about.md",
+                "file": "content/posts/callout-test/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from about"
+              "title": "Outgoing links from index"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/about.md",
+                "file": "content/posts/callout-test/index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of about"
+              "title": "Outline of index"
             }
           }
         ]
@@ -168,24 +168,24 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6fe7b3168b5a1701",
+  "active": "62a8aa84e246bb2f",
   "lastOpenFiles": [
-    "public/assets/combined.min.e2b2a47d8de495336766e1c55d676997d3569faa6b1a15c7ab78ffb9e20886d6.css",
-    "public/assets/combined.min.bf53145d6870922656bdfa3233cb97adb27bb5939dfa99b2d25a5d3624d4fc6a.css",
-    "public/assets/combined.min.fb6ee9dad93f0f0bbeb0bf32c3fd7dda70260b25401cc23c0169c3fb3d5fe2ec.css",
-    "public/assets/combined.min.2114839ef738e6854924bb779b419d0f4bd8da46a00d14c6efd3f49360405481.css",
-    "public/fonts/Ravi/fonts/RaviFaNum-Thin.woff2",
-    "public/fonts/Ravi/fonts/RaviFaNum-SemiBold.woff2",
-    "public/fonts/Ravi/fonts/RaviFaNum-Medium.woff2",
-    "public/fonts/Ravi/fonts/RaviFaNum-Light.woff2",
-    "public/fonts/Ravi/fonts/RaviFaNum-Black.woff2",
-    "themes/typo-1.13.0/static/fonts/Ravi/fonts/RaviFaNum-Thin.woff2",
-    "themes/typo-1.13.0/static/fonts/Ravi/fonts/RaviFaNum-SemiBold.woff2",
+    "public/assets/combined.min.e8f3ed7acb9c08cec0c5b6d701f5435768b34c6f5a5dadeaa7ad31f211aa8466.css",
+    "public/assets/combined.min.4656ec175f900efae79ae7e41f1cc3ae5a5b5cecf05107b5b412b688476a66de.css",
+    "public/assets/combined.min.4d30caaddcc390c0f8e3b74736768e69d3cff4fa31d7ea91bb54bf9b610e75fb.css",
+    "public/assets/combined.min.abd7914dcabf8dd247609a425ba202c3d711a372baed92af6d22af89338aff53.css",
+    "public/assets/combined.min.41833a726ce83d4caa6eac7afef485bbf4f7f8ef87e8ad8d0f7258a1d9784f31.css",
+    "public/assets/combined.min.1d7b1a2fe01423c98ae6c9afec7e47d2500a3f983e5b621bbe5ea4898cebc32e.css",
+    "public/assets/combined.min.86725d821a03fb34259e10c6d90eea14f27bab5cdc371fa70b4d5ad417bbd3ba.css",
+    "content/about.md",
+    "public/assets/combined.min.725a43b35a6dea526ff90cfb0a39082e5e0210535acf4591a6ccc2648a712496.css",
+    "public/assets/combined.min.292a1911a1909e3c007a77187e088aeff1fc58475c0a83e145efd36faf27bddd.css",
+    "public/assets/combined.min.4a13f5f94061e32ee0fd9f06e04e97f8c8f71e2a8c50878ccc477f76fcd147fc.css",
+    "public/assets/combined.min.6da3b0984f2f6e3077c6912527a043dbf231043ef52ff5d51831ac9ff0fa6ee6.css",
     "resources/_gen/images/aminkakavand.jpg",
     "public/images/aminkakavand.jpg",
     "static/images/aminkakavand.jpg",
     "content/aminkakavand.jpg",
-    "content/about.md",
     "content/media/aminkakavand.jpg",
     "public/aminkakavand.jpg",
     "public/media/aminkakavand.jpg",
