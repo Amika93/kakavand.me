@@ -34,4 +34,4 @@ jobs:
         run: |
           aws s3 sync public/ s3://blogtest/ \
             --delete \
-            --endpoint-url=https://s3.thr1.sotoon.ir/blogtest
+            --endpoint-url=https://s3.thr1.sotoon.ir
