@@ -24,7 +24,7 @@
 
       {{ if .Param "readTime" }}
       &nbsp; · &nbsp;
-      {{ .ReadingTime }} min read
+      {{ .ReadingTime }} دقیقه
       {{end }}
     </p>
 
@@ -54,9 +54,6 @@
 
   <div class="single-content">
     {{ .Content }}
-    {{ if .Site.Params.giscus.enable }}
-    {{ partial "comments.html" . }}
-    {{ end }}
   </div>
 
   {{/* Next prev controls */}}

@@ -27,11 +27,11 @@
     --h2-font-size: 1.8em;
     --hx-font-size: 1.3em;
     --p-font-size: 1em;
-    --p-line-height: 1.7em;
-    --caption-font-size: .8em;
+    --p-line-height: 1.55em;
+    --caption-font-size: .7em;
 
     /* List indentation */
-    --li-indent: 2.5rem;
+    --li-indent: 1.5rem;
     --ul-margin-top: 1rem;
     --ul-margin-bottom: 1rem;
     --ul-margin-left: 1.5rem;

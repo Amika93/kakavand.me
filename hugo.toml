@@ -69,18 +69,18 @@ url = "/about"
 style = 'algol'
 
 # Giscus comments
-[params.giscus]
-enable = true
-repo = "Amika93/kakavand.me"
-repoid = "R_kgDOONgtvg"
-category = "General"
-categoryid = "DIC_kwDOONgtvs4CoY6N"
-mapping = "pathname"
-data-strict="0"
-data-reactions-enabled="1"
-data-emit-metadata="1"
-data-input-position="top"
-data-theme="preferred_color_scheme"
-data-lang="fa"
-crossorigin="anonymous"
+# ‍[params.giscus]
+# enable = true
+# repo = "Amika93/kakavand.me"
+# repoid = "R_kgDOONgtvg"
+# category = "General"
+# categoryid = "DIC_kwDOONgtvs4CoY6N"
+# mapping = "pathname"
+# data-strict="0"
+# data-reactions-enabled="1"
+# data-emit-metadata="1"
+# data-input-position="top"
+# data-theme="Fro"
+# data-lang="fa"
+# crossorigin="anonymous"
 

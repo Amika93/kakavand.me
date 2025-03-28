@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "index"
             }
+          },
+          {
+            "id": "5e3dd218f686ddae",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.8.9"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.8.9"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -168,20 +181,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "62a8aa84e246bb2f",
+  "active": "5e3dd218f686ddae",
   "lastOpenFiles": [
-    "public/assets/combined.min.e8f3ed7acb9c08cec0c5b6d701f5435768b34c6f5a5dadeaa7ad31f211aa8466.css",
-    "public/assets/combined.min.4656ec175f900efae79ae7e41f1cc3ae5a5b5cecf05107b5b412b688476a66de.css",
-    "public/assets/combined.min.4d30caaddcc390c0f8e3b74736768e69d3cff4fa31d7ea91bb54bf9b610e75fb.css",
-    "public/assets/combined.min.abd7914dcabf8dd247609a425ba202c3d711a372baed92af6d22af89338aff53.css",
-    "public/assets/combined.min.41833a726ce83d4caa6eac7afef485bbf4f7f8ef87e8ad8d0f7258a1d9784f31.css",
-    "public/assets/combined.min.1d7b1a2fe01423c98ae6c9afec7e47d2500a3f983e5b621bbe5ea4898cebc32e.css",
-    "public/assets/combined.min.86725d821a03fb34259e10c6d90eea14f27bab5cdc371fa70b4d5ad417bbd3ba.css",
+    "public/assets/combined.min.548c14a30946c647d23703c33ebcabbfd18d676de3fc98d7ec2d759a71b0db37.css",
+    "public/assets/combined.min.eec7d2ee0458b234860f01a574bf7c74815c5f9e1fa01cb1024ef2ffdf79d533.css",
+    "public/assets/combined.min.ab1df09c72169dbc325ab019bad4909a429ed074c0d0d70e25556f6e75902fc7.css",
+    "public/assets/combined.min.72d228d86fb5b010d184f15be898a6cbe19c8eb30d02d62197bbc41104c8664e.css",
+    "public/assets/combined.min.47a1f6a9071b65466016eb922c14f8d082451bdcc17c60cddb57810f8ee8ed3c.css",
+    "public/assets/combined.min.abccdca6b179ba05342b766f7b731c097266226702e9e99324eeb692356487fe.css",
+    "public/assets/combined.min.7709ce31df782e825d35d24f5e7bea831dcc1a257b4800bb78e029c8f04a919a.css",
+    "public/assets/combined.min.baf795434b5ee99bc110ae16d8f6de8dcc1bcff92bed5ea894589764d4c616a6.css",
+    "public/assets/combined.min.1238408c8624db798a64d14d0c86592ecb0625cbf8d3db50dc46dd6c7d793d61.css",
+    "public/assets/combined.min.3ed07de15b31fe0853a9f88596ef9e0ba475c19e602480a2e887d4368d303c99.css",
+    "public/assets/combined.min.c561403faf05a5162225f2469cb8acd6eb1529ec5c2aa5db50e4a3ae1ae91b60.css",
+    "node_modules/@mdi/light-js/README.md",
     "content/about.md",
-    "public/assets/combined.min.725a43b35a6dea526ff90cfb0a39082e5e0210535acf4591a6ccc2648a712496.css",
-    "public/assets/combined.min.292a1911a1909e3c007a77187e088aeff1fc58475c0a83e145efd36faf27bddd.css",
-    "public/assets/combined.min.4a13f5f94061e32ee0fd9f06e04e97f8c8f71e2a8c50878ccc477f76fcd147fc.css",
-    "public/assets/combined.min.6da3b0984f2f6e3077c6912527a043dbf231043ef52ff5d51831ac9ff0fa6ee6.css",
     "resources/_gen/images/aminkakavand.jpg",
     "public/images/aminkakavand.jpg",
     "static/images/aminkakavand.jpg",
