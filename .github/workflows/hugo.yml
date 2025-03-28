@@ -32,4 +32,4 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.SOTOON_SECRET_KEY }}
           AWS_EC2_METADATA_DISABLED: true
         run: |
-          aws s3 --endpoint-url=https://s3.thr1.sotoon.ir sync public s3://blogtest
+          aws s3 --endpoint-url=https://s3.thr1.sotoon.ir/ sync public s3://blogtest
