@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/first test.md",
+                "file": "content/about.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "first test"
+              "title": "about"
             }
           }
         ],
@@ -157,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/posts/first test.md",
+                "file": "content/about.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of first test"
+              "title": "Outline of about"
             }
           },
           {
@@ -194,10 +194,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "63fbe061d6538b82",
+  "active": "5e3dd218f686ddae",
   "lastOpenFiles": [
-    "content/posts/callout-test/index.md",
+    "content/posts/business.md",
+    "content/posts/Test.md",
     "content/posts/first test.md",
+    "content/posts/callout-test/index.md",
     "public/assets/combined.min.548c14a30946c647d23703c33ebcabbfd18d676de3fc98d7ec2d759a71b0db37.css",
     "public/assets/combined.min.eec7d2ee0458b234860f01a574bf7c74815c5f9e1fa01cb1024ef2ffdf79d533.css",
     "public/assets/combined.min.ab1df09c72169dbc325ab019bad4909a429ed074c0d0d70e25556f6e75902fc7.css",
@@ -219,8 +221,6 @@
     "public/media/aminkakavand.jpg",
     "public/media/امین کاکاوند 682x1024.jpg",
     "content/media/امین کاکاوند 682x1024.jpg",
-    "content/posts/Test.md",
-    "content/posts/business.md",
     "content/aboutme.md",
     "content/business.md",
     "about.md",

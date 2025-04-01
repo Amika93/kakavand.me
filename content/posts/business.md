@@ -4,7 +4,7 @@ date: 2020-05-09
 summary: توصیه‌هایی به خودم برای روزی که بخواهم کسب و کاری را شروع کنم.
 toc: true
 readTime: true
-autonumber: true
+autonumber: false
 math: true
 tags:
   - استارتاپ
