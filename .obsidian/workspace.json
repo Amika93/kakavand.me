@@ -27,7 +27,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/callout-test/index.md",
+                "file": "content/archive/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -157,7 +157,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/posts/callout-test/index.md",
+                "file": "content/archive/index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -196,12 +196,13 @@
   },
   "active": "5e3dd218f686ddae",
   "lastOpenFiles": [
+    "content/posts/callout-test/index.md",
+    "content/archive/index.md",
     "content/about.md",
     "content/archive",
     "content/posts/business.md",
     "content/posts/Test.md",
     "content/posts/first test.md",
-    "content/posts/callout-test/index.md",
     "public/assets/combined.min.548c14a30946c647d23703c33ebcabbfd18d676de3fc98d7ec2d759a71b0db37.css",
     "public/assets/combined.min.eec7d2ee0458b234860f01a574bf7c74815c5f9e1fa01cb1024ef2ffdf79d533.css",
     "public/assets/combined.min.ab1df09c72169dbc325ab019bad4909a429ed074c0d0d70e25556f6e75902fc7.css",
