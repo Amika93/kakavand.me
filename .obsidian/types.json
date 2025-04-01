@@ -3,6 +3,7 @@
     "aliases": "aliases",
     "cssclasses": "multitext",
     "tags": "tags",
-    "pagination": "checkbox"
+    "pagination": "checkbox",
+    "hidePagination": "checkbox"
   }
 }

@@ -2,6 +2,6 @@
 toc: 
 hideBackToTop: true
 title: نوشته‌های من در گذشته
-pagination:
+hidePagination: true
 ---
 اینجا نوشته‌های قدیمی من قرار می‌گیره.

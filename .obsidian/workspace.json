@@ -196,6 +196,8 @@
   },
   "active": "5e3dd218f686ddae",
   "lastOpenFiles": [
+    "public/archive/index.html",
+    "public/archive",
     "content/posts/callout-test/index.md",
     "content/archive/index.md",
     "content/about.md",
@@ -211,7 +213,6 @@
     "public/assets/combined.min.abccdca6b179ba05342b766f7b731c097266226702e9e99324eeb692356487fe.css",
     "public/assets/combined.min.7709ce31df782e825d35d24f5e7bea831dcc1a257b4800bb78e029c8f04a919a.css",
     "public/assets/combined.min.baf795434b5ee99bc110ae16d8f6de8dcc1bcff92bed5ea894589764d4c616a6.css",
-    "public/assets/combined.min.1238408c8624db798a64d14d0c86592ecb0625cbf8d3db50dc46dd6c7d793d61.css",
     "node_modules/@mdi/light-js/README.md",
     "resources/_gen/images/aminkakavand.jpg",
     "public/images/aminkakavand.jpg",
