@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/archive/index.md",
+                "file": "content/about.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "about"
             }
           }
         ],
@@ -157,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/archive/index.md",
+                "file": "content/about.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline of about"
             }
           },
           {
@@ -196,10 +196,10 @@
   },
   "active": "5e3dd218f686ddae",
   "lastOpenFiles": [
+    "content/archive/index.md",
     "public/archive/index.html",
     "public/archive",
     "content/posts/callout-test/index.md",
-    "content/archive/index.md",
     "content/about.md",
     "content/archive",
     "content/posts/business.md",
@@ -212,7 +212,6 @@
     "public/assets/combined.min.47a1f6a9071b65466016eb922c14f8d082451bdcc17c60cddb57810f8ee8ed3c.css",
     "public/assets/combined.min.abccdca6b179ba05342b766f7b731c097266226702e9e99324eeb692356487fe.css",
     "public/assets/combined.min.7709ce31df782e825d35d24f5e7bea831dcc1a257b4800bb78e029c8f04a919a.css",
-    "public/assets/combined.min.baf795434b5ee99bc110ae16d8f6de8dcc1bcff92bed5ea894589764d4c616a6.css",
     "node_modules/@mdi/light-js/README.md",
     "resources/_gen/images/aminkakavand.jpg",
     "public/images/aminkakavand.jpg",

@@ -1,8 +1,9 @@
 ---
-tags: []
+tags: 
 toc: 
 hideBackToTop: true
-showTags:
+showTags: 
+hidePagination: true
 ---
 
 ![myimage](/media/aminkakavand.jpg)
