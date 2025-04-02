@@ -42,6 +42,7 @@
 
 .callout-content {
   padding: 0.5rem 1rem 0.5rem 1rem;
+  color: var(--content-secondary);
   background-color: var(--callout-content-background);
 }
 
