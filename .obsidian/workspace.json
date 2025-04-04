@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/Masa.md",
+                "file": "content/posts/‌Bits Atoms Strategy.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Masa"
+              "title": "‌Bits Atoms Strategy"
             }
           }
         ],
@@ -157,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/posts/Masa.md",
+                "file": "content/posts/‌Bits Atoms Strategy.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Masa"
+              "title": "Outline of ‌Bits Atoms Strategy"
             }
           },
           {
@@ -196,6 +196,13 @@
   },
   "active": "5e3dd218f686ddae",
   "lastOpenFiles": [
+    "public/posts/bits-atoms-strategy/index.html",
+    "public/posts/bits-atoms-strategy",
+    "content/posts/Aaron Levie.md",
+    "content/posts/‌Bits Atoms Strategy.md",
+    "public/posts/aaron-levie/index.html",
+    "public/posts/aaron-levie",
+    "content/posts/Masa.md",
     "content/posts/First Principles.md",
     "public/posts/first-principles/index.html",
     "public/posts/first-principles",
@@ -205,12 +212,8 @@
     "public/posts/naval",
     "public/posts/unbundling/index.html",
     "public/posts/unbundling",
-    "content/posts/Masa.md",
     "public/posts/masa/index.html",
-    "public/posts/masa",
     "content/posts/Thiel.md",
-    "public/posts/thiel/index.html",
-    "public/posts/thiel",
     "content/posts/Munger.md",
     "content/posts/Bloomberg.md",
     "content/posts/business.md",
@@ -237,8 +240,6 @@
     "public/media/امین کاکاوند 682x1024.jpg",
     "content/media/امین کاکاوند 682x1024.jpg",
     "content/aboutme.md",
-    "content/business.md",
-    "about.md",
-    "content/about/index.md"
+    "content/business.md"
   ]
 }
