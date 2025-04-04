@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/archive/index.md",
+                "file": "content/posts/Thaw.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "Thaw"
             }
           }
         ],
@@ -157,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/archive/index.md",
+                "file": "content/posts/Thaw.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline of Thaw"
             }
           },
           {
@@ -194,22 +194,24 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "6fe7b3168b5a1701",
+  "active": "5e3dd218f686ddae",
   "lastOpenFiles": [
-    "content/about.md",
-    "public/assets/combined.min.609552df6cf18367ff6e6a81ee326c91d7ebab1d78e1663d0226fb77f2cb48c8.css",
-    "public/js/bundle.min.980052fa7aff11a819e4d00f302a59c8ba003fd5db167d653ac2dab34b25909f.js",
-    "public/js/bundle.min.3280711c1752324b3e7316d1c847277f45a9ff0b92ec582e1364bc1eb9e970ef.js",
-    "themes/typo-1.13.0/assets/js/persian-date-converter.js",
-    "public/assets/combined.min.4dcf2eec95b9cb4bea2cb4bc2cca761dc07ea949a1117991727cf80c318dbe40.css",
-    "public/assets/combined.min.50e28fef4a37472a7b1545d43c294c1684fb3a723784106ed5566d860e8c0e7d.css",
-    "public/assets/combined.min.ced64eaaaf79b5492ae28d4cfef18eef7c09f69cd97c30a7e16da1c57718080e.css",
-    "public/assets/combined.min.1630cc2769442eaabec126a2779066ae6e75813ebc18e855453ff654ea0ae5ed.css",
-    "public/assets/combined.min.89b6c5379c57f20a3358674b27b46e206e5485b1a337b824b8ea5da57056daa8.css",
-    "public/assets/combined.min.95c27ea8599f89f897e9eb785aff9cb109bc557dc3bcde460d228b22e5773145.css",
-    "content/archive/index.md",
+    "public/tags/کتاب/page/1/index.html",
+    "public/tags/کتاب/page/1",
+    "public/tags/کتاب/page",
+    "public/tags/کتاب/index.xml",
+    "public/tags/کتاب/index.html",
+    "public/tags/کتاب",
+    "public/posts/thaw/index.html",
+    "public/posts/thaw",
+    "public/tags/clippings/page/1/index.html",
+    "public/tags/clippings/page/1",
+    "public/tags/clippings/page",
+    "content/posts/business.md",
+    "content/posts/Thaw.md",
     "content/posts/callout-test/index.md",
-    "content/archive/business.md",
+    "content/archive/index.md",
+    "content/about.md",
     "content/posts/Test.md",
     "content/posts/first test.md",
     "node_modules/@mdi/light-js/README.md",
