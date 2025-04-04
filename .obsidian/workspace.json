@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/Bloomberg.md",
+                "file": "content/posts/Unbundling.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Bloomberg"
+              "title": "Unbundling"
             }
           }
         ],
@@ -157,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/posts/Bloomberg.md",
+                "file": "content/posts/Unbundling.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Bloomberg"
+              "title": "Outline of Unbundling"
             }
           },
           {
@@ -196,6 +196,22 @@
   },
   "active": "5e3dd218f686ddae",
   "lastOpenFiles": [
+    "content/posts/Naval.md",
+    "public/posts/naval/index.html",
+    "public/posts/naval",
+    "content/posts/Unbundling.md",
+    "public/posts/unbundling/index.html",
+    "public/posts/unbundling",
+    "content/posts/Masa.md",
+    "public/posts/masa/index.html",
+    "public/posts/masa",
+    "content/posts/Thiel.md",
+    "public/posts/thiel/index.html",
+    "public/posts/thiel",
+    "content/posts/Munger.md",
+    "public/posts/munger/index.html",
+    "public/posts/munger",
+    "content/posts/Bloomberg.md",
     "content/posts/business.md",
     "content/posts/Disrupt.md",
     "content/posts/fake.md",
@@ -204,17 +220,6 @@
     "content/posts/Tencent.md",
     "content/posts/Thaw.md",
     "content/posts/The Big Short.md",
-    "public/tags/فیلم/page/1/index.html",
-    "public/tags/فیلم/page/1",
-    "public/tags/فیلم/page",
-    "public/tags/فیلم/index.xml",
-    "public/tags/فیلم/index.html",
-    "public/tags/فیلم",
-    "public/posts/the-big-short/index.html",
-    "public/posts/the-big-short",
-    "content/posts/Bloomberg.md",
-    "public/posts/bloomberg/index.html",
-    "public/posts/bloomberg",
     "content/posts/callout-test/index.md",
     "content/archive/index.md",
     "content/about.md",
@@ -234,10 +239,6 @@
     "content/business.md",
     "about.md",
     "content/about/index.md",
-    "content/index.md",
-    "about/index.md",
-    "درباره من.md",
-    "archetypes/default.md",
-    "themes/typo-1.13.0/content/_index.md"
+    "content/index.md"
   ]
 }
