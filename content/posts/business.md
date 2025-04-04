@@ -11,6 +11,7 @@ tags:
   - استراتژی
   - مدل_ذهنی
   - کسب_و_کار
+  - بایگانی
 showTags: true
 hideBackToTop: true
 ---

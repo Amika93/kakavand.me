@@ -4,6 +4,7 @@ date: 2023-08-03
 summary: یک داستان و معرفی کتاب شورویِ ضدِ شوروی
 tags:
   - کتاب
+  - بایگانی
 toc: true
 hideBackToTop: true
 readTime: true

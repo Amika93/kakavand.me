@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/Tencent.md",
+                "file": "content/posts/Bloomberg.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Tencent"
+              "title": "Bloomberg"
             }
           }
         ],
@@ -157,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/posts/Tencent.md",
+                "file": "content/posts/Bloomberg.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Tencent"
+              "title": "Outline of Bloomberg"
             }
           },
           {
@@ -196,24 +196,25 @@
   },
   "active": "5e3dd218f686ddae",
   "lastOpenFiles": [
+    "content/posts/business.md",
+    "content/posts/Disrupt.md",
+    "content/posts/fake.md",
     "content/posts/Pony-Ma.md",
+    "content/posts/Simons.md",
+    "content/posts/Tencent.md",
+    "content/posts/Thaw.md",
+    "content/posts/The Big Short.md",
+    "public/tags/فیلم/page/1/index.html",
+    "public/tags/فیلم/page/1",
+    "public/tags/فیلم/page",
+    "public/tags/فیلم/index.xml",
+    "public/tags/فیلم/index.html",
+    "public/tags/فیلم",
+    "public/posts/the-big-short/index.html",
+    "public/posts/the-big-short",
     "content/posts/Bloomberg.md",
     "public/posts/bloomberg/index.html",
     "public/posts/bloomberg",
-    "public/posts/pony-ma/index.html",
-    "public/posts/pony-ma",
-    "public/posts/untitled-1/index.html",
-    "public/posts/untitled-1",
-    "content/posts/Simons.md",
-    "content/posts/Tencent.md",
-    "public/posts/tencent/index.html",
-    "public/posts/tencent",
-    "content/posts/Disrupt.md",
-    "public/posts/disrupt/index.html",
-    "public/posts/disrupt",
-    "content/posts/Thaw.md",
-    "content/posts/fake.md",
-    "content/posts/business.md",
     "content/posts/callout-test/index.md",
     "content/archive/index.md",
     "content/about.md",
