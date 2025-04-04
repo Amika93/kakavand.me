@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/about.md",
+                "file": "content/archive/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "about"
+              "title": "index"
             }
           }
         ],
@@ -157,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/about.md",
+                "file": "content/archive/index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of about"
+              "title": "Outline of index"
             }
           },
           {
@@ -194,8 +194,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5e3dd218f686ddae",
+  "active": "6fe7b3168b5a1701",
   "lastOpenFiles": [
+    "content/about.md",
     "public/assets/combined.min.609552df6cf18367ff6e6a81ee326c91d7ebab1d78e1663d0226fb77f2cb48c8.css",
     "public/js/bundle.min.980052fa7aff11a819e4d00f302a59c8ba003fd5db167d653ac2dab34b25909f.js",
     "public/js/bundle.min.3280711c1752324b3e7316d1c847277f45a9ff0b92ec582e1364bc1eb9e970ef.js",
@@ -206,11 +207,9 @@
     "public/assets/combined.min.1630cc2769442eaabec126a2779066ae6e75813ebc18e855453ff654ea0ae5ed.css",
     "public/assets/combined.min.89b6c5379c57f20a3358674b27b46e206e5485b1a337b824b8ea5da57056daa8.css",
     "public/assets/combined.min.95c27ea8599f89f897e9eb785aff9cb109bc557dc3bcde460d228b22e5773145.css",
-    "public/assets/combined.min.d714f9ec68ea32e51ae444566d2f6df21635131808aa5e7f89e9f5edcd148ccd.css",
     "content/archive/index.md",
     "content/posts/callout-test/index.md",
-    "content/about.md",
-    "content/posts/business.md",
+    "content/archive/business.md",
     "content/posts/Test.md",
     "content/posts/first test.md",
     "node_modules/@mdi/light-js/README.md",
