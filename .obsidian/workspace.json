@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/‌Bits Atoms Strategy.md",
+                "file": "content/posts/Patrick Collison.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "‌Bits Atoms Strategy"
+              "title": "Patrick Collison"
             }
           }
         ],
@@ -68,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:clippings",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -157,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/posts/‌Bits Atoms Strategy.md",
+                "file": "content/posts/Patrick Collison.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of ‌Bits Atoms Strategy"
+              "title": "Outline of Patrick Collison"
             }
           },
           {
@@ -196,23 +196,28 @@
   },
   "active": "5e3dd218f686ddae",
   "lastOpenFiles": [
-    "public/posts/bits-atoms-strategy/index.html",
-    "public/posts/bits-atoms-strategy",
-    "content/posts/Aaron Levie.md",
+    "public/posts/patrick-collison/index.html",
+    "public/posts/patrick-collison",
+    "content/posts/Netflix.md",
+    "content/posts/Patrick Collison.md",
+    "public/posts/netflix/index.html",
+    "public/posts/netflix",
+    "content/posts/Reed Hastings.md",
+    "public/posts/reed-hastings/index.html",
+    "public/posts/reed-hastings",
+    "content/posts/Jeff Bezos.md",
+    "public/posts/jeff-bezos/index.html",
+    "public/posts/jeff-bezos",
+    "content/posts/PG.md",
+    "public/posts/pg/index.html",
+    "public/posts/pg",
     "content/posts/‌Bits Atoms Strategy.md",
-    "public/posts/aaron-levie/index.html",
-    "public/posts/aaron-levie",
+    "public/posts/bits-atoms-strategy/index.html",
+    "content/posts/Aaron Levie.md",
     "content/posts/Masa.md",
     "content/posts/First Principles.md",
-    "public/posts/first-principles/index.html",
-    "public/posts/first-principles",
     "content/posts/Unbundling.md",
     "content/posts/Naval.md",
-    "public/posts/naval/index.html",
-    "public/posts/naval",
-    "public/posts/unbundling/index.html",
-    "public/posts/unbundling",
-    "public/posts/masa/index.html",
     "content/posts/Thiel.md",
     "content/posts/Munger.md",
     "content/posts/Bloomberg.md",
@@ -227,9 +232,6 @@
     "content/posts/callout-test/index.md",
     "content/archive/index.md",
     "content/about.md",
-    "content/posts/Test.md",
-    "content/posts/first test.md",
-    "node_modules/@mdi/light-js/README.md",
     "resources/_gen/images/aminkakavand.jpg",
     "public/images/aminkakavand.jpg",
     "static/images/aminkakavand.jpg",
@@ -238,8 +240,6 @@
     "public/aminkakavand.jpg",
     "public/media/aminkakavand.jpg",
     "public/media/امین کاکاوند 682x1024.jpg",
-    "content/media/امین کاکاوند 682x1024.jpg",
-    "content/aboutme.md",
-    "content/business.md"
+    "content/media/امین کاکاوند 682x1024.jpg"
   ]
 }
