@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/Simons.md",
+                "file": "content/posts/Tencent.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Simons"
+              "title": "Tencent"
             }
           }
         ],
@@ -157,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/posts/Simons.md",
+                "file": "content/posts/Tencent.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Simons"
+              "title": "Outline of Tencent"
             }
           },
           {
@@ -196,23 +196,24 @@
   },
   "active": "5e3dd218f686ddae",
   "lastOpenFiles": [
-    "content/posts/Untitled.md",
+    "content/posts/Pony-Ma.md",
+    "content/posts/Bloomberg.md",
+    "public/posts/bloomberg/index.html",
+    "public/posts/bloomberg",
+    "public/posts/pony-ma/index.html",
+    "public/posts/pony-ma",
+    "public/posts/untitled-1/index.html",
+    "public/posts/untitled-1",
+    "content/posts/Simons.md",
     "content/posts/Tencent.md",
     "public/posts/tencent/index.html",
     "public/posts/tencent",
     "content/posts/Disrupt.md",
     "public/posts/disrupt/index.html",
     "public/posts/disrupt",
-    "content/posts/Simons.md",
     "content/posts/Thaw.md",
     "content/posts/fake.md",
     "content/posts/business.md",
-    "public/tags/بایگانی/page/1/index.html",
-    "public/tags/بایگانی/page/1",
-    "public/tags/بایگانی/page",
-    "public/tags/بایگانی/index.xml",
-    "public/tags/بایگانی/index.html",
-    "public/tags/بایگانی",
     "content/posts/callout-test/index.md",
     "content/archive/index.md",
     "content/about.md",
