@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/Thaw.md",
+                "file": "content/posts/Simons.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Thaw"
+              "title": "Simons"
             }
           }
         ],
@@ -157,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/posts/Thaw.md",
+                "file": "content/posts/Simons.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Thaw"
+              "title": "Outline of Simons"
             }
           },
           {
@@ -196,7 +196,15 @@
   },
   "active": "5e3dd218f686ddae",
   "lastOpenFiles": [
+    "content/posts/Untitled.md",
+    "content/posts/Tencent.md",
+    "public/posts/tencent/index.html",
+    "public/posts/tencent",
+    "content/posts/Disrupt.md",
+    "public/posts/disrupt/index.html",
+    "public/posts/disrupt",
     "content/posts/Simons.md",
+    "content/posts/Thaw.md",
     "content/posts/fake.md",
     "content/posts/business.md",
     "public/tags/بایگانی/page/1/index.html",
@@ -205,11 +213,6 @@
     "public/tags/بایگانی/index.xml",
     "public/tags/بایگانی/index.html",
     "public/tags/بایگانی",
-    "public/posts/simons/index.html",
-    "public/posts/simons",
-    "public/posts/fake/index.html",
-    "public/posts/fake",
-    "content/posts/Thaw.md",
     "content/posts/callout-test/index.md",
     "content/archive/index.md",
     "content/about.md",
