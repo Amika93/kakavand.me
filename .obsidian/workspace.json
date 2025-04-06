@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/X V. Threads.md",
+                "file": "content/posts/Checklist Hero.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "X V. Threads"
+              "title": "Checklist Hero"
             }
           }
         ],
@@ -157,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/posts/X V. Threads.md",
+                "file": "content/posts/Checklist Hero.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of X V. Threads"
+              "title": "Outline of Checklist Hero"
             }
           },
           {
@@ -196,10 +196,10 @@
   },
   "active": "5e3dd218f686ddae",
   "lastOpenFiles": [
+    "content/posts/X V. Threads.md",
     "public/posts/x-v.-threads/index.html",
     "public/posts/x-v.-threads",
     "content/posts/The Wire.md",
-    "content/posts/X V. Threads.md",
     "public/posts/the-wire/index.html",
     "public/posts/the-wire",
     "content/posts/Checklist Manifesto.md",
@@ -212,7 +212,6 @@
     "content/posts/Van Halen Checklist.md",
     "public/tags/چک_لیست/page/1/index.html",
     "public/tags/چک_لیست/page/1",
-    "public/tags/چک_لیست/page",
     "content/posts/Masa.md",
     "content/posts/Munger.md",
     "content/posts/Naval.md",
