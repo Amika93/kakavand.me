@@ -72,28 +72,6 @@ url = "/archive"
 [markup.highlight]
 style = 'algol'
 
-# Enable goldmark renderer with custom settings
-[markup.goldmark]
-[markup.goldmark.extensions]
-definitionList = true
-footnote = true
-linkify = true
-strikethrough = true
-table = true
-taskList = true
-typographer = true
-
-[markup.goldmark.renderer]
-# Enable unsafe rendering to support HTML within wiki links
-unsafe = true
-
-# Process raw wikilinks in content using a JS hook
-[markup.goldmark.parser]
-autoHeadingID = true
-# Allow raw HTML for link processing
-attribute.block = true
-attribute.title = true
-
 # Giscus comments
 # ‍[params.giscus]
 # enable = true

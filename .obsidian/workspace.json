@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/Aaron Levie.md",
+                "file": "content/posts/callout-test/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Aaron Levie"
+              "title": "index"
             }
           }
         ],
@@ -196,6 +196,12 @@
   },
   "active": "5e3dd218f686ddae",
   "lastOpenFiles": [
+    "public/assets/combined.min.d1b63d47a9c93a3fc52c10ef090f6d9a3ee559b88214b43c84fdb12897b08285.css",
+    "layouts/partials/head/css.html",
+    "assets/css/wikilinks.css",
+    "assets/css",
+    "assets/js/wikilinks.js",
+    "content/posts/Aaron Levie.md",
     "layouts/partials/head/js.html",
     "layouts/partials/head",
     "layouts/partials",
@@ -203,15 +209,10 @@
     "layouts/shortcodes/wikilinks.html",
     "layouts/shortcodes",
     "layouts/_default/_markup/render-hook.md",
-    "layouts/_default/_markup/render-link.html",
     "content/posts/callout-test/index.md",
     "content/posts/Checklist Hero.md",
     "content/posts/X V. Threads.md",
-    "public/posts/x-v.-threads/index.html",
-    "public/posts/x-v.-threads",
     "content/posts/The Wire.md",
-    "public/posts/the-wire/index.html",
-    "public/posts/the-wire",
     "content/posts/Checklist Manifesto.md",
     "content/posts/Checklist.md",
     "content/posts/Van Halen Checklist.md",
@@ -231,7 +232,6 @@
     "content/posts/Unbundling.md",
     "content/posts/Jeff Bezos.md",
     "content/posts/‌Bits Atoms Strategy.md",
-    "content/posts/Aaron Levie.md",
     "resources/_gen/images/aminkakavand.jpg",
     "public/images/aminkakavand.jpg",
     "static/images/aminkakavand.jpg",
