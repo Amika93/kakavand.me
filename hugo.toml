@@ -88,3 +88,8 @@ style = 'algol'
 # data-lang="fa"
 # crossorigin="anonymous"
 
+# [assets]
+#   [[assets.js]]
+#     src = "themes/typo-1.13.0/assets/js/obsidian-links.js"
+#     target = "js/obsidian-links.js"
+

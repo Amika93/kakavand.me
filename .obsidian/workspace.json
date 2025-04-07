@@ -194,8 +194,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5e3dd218f686ddae",
+  "active": "63fbe061d6538b82",
   "lastOpenFiles": [
+    "public/js/obsidian-links.js",
+    "static/js/obsidian-links.js",
+    "static/js",
+    "themes/typo-1.13.0/assets/js/obsidian-links.js",
+    "themes/typo-1.13.0/layouts/_default/_markup/render-link.html",
     "public/assets/combined.min.d1b63d47a9c93a3fc52c10ef090f6d9a3ee559b88214b43c84fdb12897b08285.css",
     "layouts/partials/head/css.html",
     "assets/css/wikilinks.css",
@@ -203,11 +208,6 @@
     "assets/js/wikilinks.js",
     "content/posts/Aaron Levie.md",
     "layouts/partials/head/js.html",
-    "layouts/partials/head",
-    "layouts/partials",
-    "layouts/_default/_markup/render-hook/wikilinks.html",
-    "layouts/shortcodes/wikilinks.html",
-    "layouts/shortcodes",
     "layouts/_default/_markup/render-hook.md",
     "content/posts/callout-test/index.md",
     "content/posts/Checklist Hero.md",

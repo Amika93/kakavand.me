@@ -1,0 +1,27 @@
+{{- $url := .Destination | safeURL -}}
+{{- $text := .Text | safeHTML -}}
+
+{{- if hasPrefix $url "[[" -}}
+    {{- $parts := split (trim $url "[]") "|" -}}
+    {{- $docName := index $parts 0 | trim -}}
+    {{- $linkText := index $parts 1 | trim | default $docName -}}
+    
+    {{- $docPath := "" -}}
+    
+    {{- if hasPrefix $docName "content/" -}}
+        {{- /* Cross-directory link */ -}}
+        {{- $dirName := index (split (replace $docName "^content/" "") "/") 0 -}}
+        {{- $docPath = printf "/%s" $dirName -}}
+    {{- else -}}
+        {{- /* Same directory link */ -}}
+        {{- $section := .Page.Section | default "posts" -}}
+        {{- $docPath = printf "/%s/%s" $section (replace $docName " " "-" | lower) -}}
+    {{- end -}}
+    
+    {{- /* Debug information */ -}}
+    {{- printf "<!-- Converting Obsidian link: %s -> %s -->" $url $docPath | safeHTML -}}
+    
+    <a href="{{ $docPath }}" title="{{ $linkText }}">{{ $linkText }}</a>
+{{- else -}}
+    <a href="{{ $url }}"{{ with .Title}} title="{{ . }}"{{ end }}{{ if strings.HasPrefix $url "http" }} target="_blank" rel="noopener"{{ end }}>{{ $text }}</a>
+{{- end -}} 
