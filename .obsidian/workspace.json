@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/callout-test/index.md",
+                "file": "content/posts/test-features.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "test-features"
             }
           }
         ],
@@ -194,22 +194,23 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "63fbe061d6538b82",
+  "active": "5e3dd218f686ddae",
   "lastOpenFiles": [
-    "public/js/obsidian-links.js",
-    "static/js/obsidian-links.js",
-    "static/js",
-    "themes/typo-1.13.0/assets/js/obsidian-links.js",
-    "themes/typo-1.13.0/layouts/_default/_markup/render-link.html",
-    "public/assets/combined.min.d1b63d47a9c93a3fc52c10ef090f6d9a3ee559b88214b43c84fdb12897b08285.css",
-    "layouts/partials/head/css.html",
-    "assets/css/wikilinks.css",
-    "assets/css",
-    "assets/js/wikilinks.js",
-    "content/posts/Aaron Levie.md",
+    "layouts/_default/baseof.html",
+    "layouts/_default/single.html",
+    "public/css/custom.css",
+    "public/css",
+    "static/css/custom.css",
+    "static/css",
     "layouts/partials/head/js.html",
-    "layouts/_default/_markup/render-hook.md",
+    "layouts/partials/head",
+    "layouts/partials",
     "content/posts/callout-test/index.md",
+    "public/tags/تست/page/1/index.html",
+    "public/tags/تست/page/1",
+    "content/posts/test-features.md",
+    "content/posts/Aaron Levie.md",
+    "layouts/_default/_markup/render-hook.md",
     "content/posts/Checklist Hero.md",
     "content/posts/X V. Threads.md",
     "content/posts/The Wire.md",
@@ -231,7 +232,6 @@
     "content/posts/Thiel.md",
     "content/posts/Unbundling.md",
     "content/posts/Jeff Bezos.md",
-    "content/posts/‌Bits Atoms Strategy.md",
     "resources/_gen/images/aminkakavand.jpg",
     "public/images/aminkakavand.jpg",
     "static/images/aminkakavand.jpg",
