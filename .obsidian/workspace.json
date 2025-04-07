@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/callout-test/index.md",
+                "file": "content/posts/Aaron Levie.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "Aaron Levie"
             }
           }
         ],
@@ -196,6 +196,15 @@
   },
   "active": "5e3dd218f686ddae",
   "lastOpenFiles": [
+    "layouts/partials/head/js.html",
+    "layouts/partials/head",
+    "layouts/partials",
+    "layouts/_default/_markup/render-hook/wikilinks.html",
+    "layouts/shortcodes/wikilinks.html",
+    "layouts/shortcodes",
+    "layouts/_default/_markup/render-hook.md",
+    "layouts/_default/_markup/render-link.html",
+    "content/posts/callout-test/index.md",
     "content/posts/Checklist Hero.md",
     "content/posts/X V. Threads.md",
     "public/posts/x-v.-threads/index.html",
@@ -204,14 +213,8 @@
     "public/posts/the-wire/index.html",
     "public/posts/the-wire",
     "content/posts/Checklist Manifesto.md",
-    "public/posts/checklist-manifesto/index.html",
-    "public/posts/checklist-manifesto",
     "content/posts/Checklist.md",
-    "public/posts/checklist/index.html",
-    "public/posts/checklist",
     "content/posts/Van Halen Checklist.md",
-    "public/tags/چک_لیست/page/1/index.html",
-    "public/tags/چک_لیست/page/1",
     "content/posts/Masa.md",
     "content/posts/Munger.md",
     "content/posts/Naval.md",
@@ -229,8 +232,6 @@
     "content/posts/Jeff Bezos.md",
     "content/posts/‌Bits Atoms Strategy.md",
     "content/posts/Aaron Levie.md",
-    "content/posts/First Principles.md",
-    "content/posts/Bloomberg.md",
     "resources/_gen/images/aminkakavand.jpg",
     "public/images/aminkakavand.jpg",
     "static/images/aminkakavand.jpg",

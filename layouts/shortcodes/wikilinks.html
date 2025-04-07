@@ -1,0 +1,9 @@
+{{ $content := .Inner }}
+
+{{ $wikiLinksRegex := "\\[\\[([^\\]\\|]+)(?:\\|([^\\]]+))?\\]\\]" }}
+{{ $processedContent := $content }}
+
+{{ $replaceFunc := printf "replaceWikiLink" }}
+{{ $processedContent = $processedContent | replaceRE $wikiLinksRegex "${1}" }}
+
+{{ $processedContent | safeHTML }} 

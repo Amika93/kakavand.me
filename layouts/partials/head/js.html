@@ -1,0 +1,30 @@
+{{ $theme := resources.Get "js/theme.js" }}
+<script src="{{ $theme.RelPermalink }}"></script>
+
+<script>
+// Function to process Obsidian-style wiki links 
+document.addEventListener('DOMContentLoaded', function() {
+    // Regular expression to match [[WikiLink]] or [[WikiLink|Text]] format
+    const wikiLinkRegex = /\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g;
+    
+    // Function to convert paths (replacing spaces with hyphens, lowercase)
+    function formatPath(path) {
+        return '/' + path.trim().toLowerCase().replace(/\s+/g, '-') + '/';
+    }
+    
+    // Process all elements with markdown content
+    const contentElements = document.querySelectorAll('.content p, .content li, .content blockquote');
+    
+    contentElements.forEach(element => {
+        // Skip elements that don't contain any wiki links
+        if (!element.innerHTML.includes('[[')) return;
+        
+        // Replace wiki links with actual HTML links
+        element.innerHTML = element.innerHTML.replace(wikiLinkRegex, function(match, link, text) {
+            const displayText = text || link;
+            const href = formatPath(link);
+            return `<a href="${href}">${displayText}</a>`;
+        });
+    });
+});
+</script> 
