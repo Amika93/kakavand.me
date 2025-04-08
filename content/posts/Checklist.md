@@ -128,7 +128,5 @@ tags:
 
 **اگر این پست را دوست داشتید، پستهای زیر را هم مطالعه کنید:**
 
-- [در باب اهمیت چک لیست](https://kakavand.me/checklist_manifesto/)
-- [مهمترین نکته در تهیه چک لیست](https://kakavand.me/hero-in-the-age-of-checklists/)
-
-[پ](https://kakavand.me/proposal/ "پروپوزالی برای ایجاد انگیزه")
+- [[Checklist Manifesto| در باب اهمیت چک لیست]]
+- [[Checklist Hero | مهم‌ترین نکته در مورد چک لیست]]
