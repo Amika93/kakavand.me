@@ -15,17 +15,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // Function to convert Obsidian links to HTML
     function convertObsidianLinks(element) {
         const html = element.innerHTML;
-        if (html.match(obsidianLinkRegex)) {
-            const newHtml = html.replace(obsidianLinkRegex, function(match, docName, linkText) {
-                docName = docName.trim();
+    if (html.match(obsidianLinkRegex)) {
+        const newHtml = html.replace(obsidianLinkRegex, function(match, docName, linkText) {
+            docName = docName.trim();
                 linkText = linkText ? linkText.trim() : docName;
-                
-                let docPath;
-                if (docName.startsWith('content/')) {
-                    const dirName = docName.replace(/^content\//, '').split('/')[0];
-                    docPath = `/${dirName}`;
-                } else {
-                    docPath = `/${currentSection}/${docName.toLowerCase().replace(/\s+/g, '-')}`;
+            
+            let docPath;
+            if (docName.startsWith('content/')) {
+                const dirName = docName.replace(/^content\//, '').split('/')[0];
+                docPath = `/${dirName}`;
+            } else {
+                docPath = `/${currentSection}/${docName.toLowerCase().replace(/\s+/g, '-')}`;
                 }
                 
                 return `<a href="${docPath}" title="${linkText}">${linkText}</a>`;
