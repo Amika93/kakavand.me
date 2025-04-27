@@ -72,6 +72,17 @@ url = "/archive"
 [markup.highlight]
 style = 'algol'
 
+# Add settings for heading anchors
+[markup.headings]
+  autoHeadingID = true
+  autoHeadingIDType = "github"
+
+# Configure Table of Contents
+[markup.tableOfContents]
+  startLevel = 2 # Start TOC from H2
+  endLevel = 3   # Include up to H3 (adjust if needed)
+  ordered = false
+
 # Giscus comments
 # ‍[params.giscus]
 # enable = true
@@ -92,4 +103,3 @@ style = 'algol'
 #   [[assets.js]]
 #     src = "themes/typo-1.13.0/assets/js/obsidian-links.js"
 #     target = "js/obsidian-links.js"
-

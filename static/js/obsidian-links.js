@@ -9,96 +9,180 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentSection = currentPath.split('/')[1] || 'posts';
     console.log('Current section:', currentSection);
     
-    // Find all Obsidian links (both with and without pipe)
-    const obsidianLinkRegex = /\[\[([^|\]]+)(?:\|([^\]]+))?\]\]/g;
-    
-    // Function to convert Obsidian links to HTML
-    function convertObsidianLinks(element) {
-        const html = element.innerHTML;
-    if (html.match(obsidianLinkRegex)) {
-        const newHtml = html.replace(obsidianLinkRegex, function(match, docName, linkText) {
-            docName = docName.trim();
-                linkText = linkText ? linkText.trim() : docName;
-            
-            let docPath;
-            if (docName.startsWith('content/')) {
-                const dirName = docName.replace(/^content\//, '').split('/')[0];
-                docPath = `/${dirName}`;
-            } else {
-                docPath = `/${currentSection}/${docName.toLowerCase().replace(/\s+/g, '-')}`;
+    // --- Obsidian Links Refactored ---
+    function convertObsidianLinksInNode(node) {
+        if (node.nodeType === Node.TEXT_NODE) {
+            // Replace obsidian links in text nodes only
+            const obsidianLinkRegex = /\[\[([^|\]]+)(?:\|([^\]]+))?\]\]/g;
+            let text = node.nodeValue;
+            let match;
+            let lastIndex = 0;
+            let parent = node.parentNode;
+            let frag = document.createDocumentFragment();
+            let changed = false;
+            while ((match = obsidianLinkRegex.exec(text)) !== null) {
+                changed = true;
+                // Text before the match
+                if (match.index > lastIndex) {
+                    frag.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
                 }
-                
-                return `<a href="${docPath}" title="${linkText}">${linkText}</a>`;
-            });
-            element.innerHTML = newHtml;
+                const docName = match[1].trim();
+                const linkText = match[2] ? match[2].trim() : docName;
+                let a = document.createElement('a');
+                if (docName.startsWith('#')) {
+                    // Internal anchor link
+                    a.href = docName;
+                    a.className = 'obsidian-anchor-link';
+                } else {
+                    // Internal page link
+                    const docPath = '/posts/' + docName.toLowerCase().replace(/\s+/g, '-');
+                    a.href = docPath;
+                    a.className = 'obsidian-page-link';
+                }
+                a.textContent = linkText;
+                frag.appendChild(a);
+                lastIndex = match.index + match[0].length;
+            }
+            if (changed) {
+                // Remaining text
+                if (lastIndex < text.length) {
+                    frag.appendChild(document.createTextNode(text.slice(lastIndex)));
+                }
+                parent.replaceChild(frag, node);
+            }
+        } else if (node.nodeType === Node.ELEMENT_NODE && node.childNodes) {
+            // Avoid replacing inside script/style/pre/code
+            if (!['SCRIPT', 'STYLE', 'PRE', 'CODE'].includes(node.tagName)) {
+                Array.from(node.childNodes).forEach(convertObsidianLinksInNode);
+            }
         }
     }
-    
-    // Convert Obsidian links in the main content
-    const mainContent = document.querySelector('.single-content');
-    if (mainContent) {
-        convertObsidianLinks(mainContent);
+
+    function convertObsidianLinks() {
+        // Only process main content area
+        const contentElements = document.querySelectorAll('main, .post-content, .content, article, .single-content');
+        if (contentElements.length === 0) return;
+        contentElements.forEach(element => {
+            convertObsidianLinksInNode(element);
+        });
     }
-    
+
+    convertObsidianLinks();
+    // Now trigger callout initialization if available
+    if (typeof window.initObsidianCallouts === 'function') {
+        window.initObsidianCallouts();
+    } else if (typeof initObsidianCallouts === 'function') {
+        initObsidianCallouts();
+    } else {
+        // Fallback: try to find and run callout init from global scope
+        if (window.obsidianCalloutsInit) {
+            window.obsidianCalloutsInit();
+        }
+    }
+
     // Handle footnotes
-    const footnotes = document.querySelectorAll('a[href^="#fn"]');
+    // Select only footnote reference links NOT inside .footnotes and only in main content
+    const footnotes = Array.from(document.querySelectorAll('.single-content a[href^="#fn"]')).filter(link => !link.closest('.footnotes'));
+    // Remove any buggy duplicate footnote sections (keep only the first)
+    const allFootnoteSections = Array.from(document.querySelectorAll('.footnotes'));
+    if (allFootnoteSections.length > 1) {
+        // Keep the first, remove the rest
+        allFootnoteSections.slice(1).forEach(section => {
+            section.parentNode && section.parentNode.removeChild(section);
+        });
+    }
+    let activeTooltip = null;
     footnotes.forEach(footnote => {
         const footnoteId = footnote.getAttribute('href').substring(1);
-        const footnoteContent = document.getElementById(footnoteId)?.innerHTML;
+        let footnoteContent = document.getElementById(footnoteId)?.innerHTML;
         if (!footnoteContent) return;
         
+        // Remove 'back to content' and 'go to footnote' links from footnoteContent
+        footnoteContent = footnoteContent.replace(/<a[^>]*href="#fnref[^"]*"[^>]*>.*?<\/a>/gi, ''); // Remove back links
+        footnoteContent = footnoteContent.replace(/<a[^>]*href="#fn[^"]*"[^>]*>.*?<\/a>/gi, ''); // Remove go-to links
+
         // Create tooltip
         const tooltip = document.createElement('div');
         tooltip.className = 'footnote-tooltip';
-        
-        // Create close button
-        const closeButton = document.createElement('button');
-        closeButton.innerHTML = '×';
-        closeButton.style.position = 'absolute';
-        closeButton.style.top = '5px';
-        closeButton.style.right = '5px';
-        closeButton.style.background = 'none';
-        closeButton.style.border = 'none';
-        closeButton.style.fontSize = '1.2em';
-        closeButton.style.cursor = 'pointer';
-        closeButton.style.color = 'var(--content-secondary)';
-        closeButton.style.padding = '0 5px';
+        tooltip.style.border = 'none !important';
         
         // Add content and close button to tooltip
         tooltip.innerHTML = `
+            <div class="footnote-tooltip-header">
+                <button type="button" aria-label="Close footnote">×</button>
+            </div>
             <div class="footnote-content">${footnoteContent}</div>
         `;
-        tooltip.appendChild(closeButton);
+        const contentDiv = tooltip.querySelector('.footnote-content');
+        const closeButton = tooltip.querySelector('.footnote-tooltip-header button');
+        // Cap visible lines to 4 with scrolling
+        if (contentDiv) {
+            contentDiv.style.maxHeight = '8.4em'; // 4 lines * 1.6em line-height
+            contentDiv.style.overflowY = 'auto';
+            contentDiv.style.overflowX = 'hidden';
+        }
+        
         document.body.appendChild(tooltip);
         
-        // Position tooltip on click
-        footnote.addEventListener('click', (e) => {
-            e.preventDefault();
+        // Make content scrollable if long
+        if (contentDiv && contentDiv.textContent.length > 200) {
+            tooltip.classList.add('scrollable');
+        }
+        
+        // Hide any active tooltip
+        function hideActiveTooltip() {
+            if (activeTooltip) {
+                activeTooltip.style.display = 'none';
+                activeTooltip = null;
+            }
+        }
+        // Position tooltip below footnote (absolute, anchored in document)
+        function positionTooltip() {
             const rect = footnote.getBoundingClientRect();
             tooltip.style.display = 'block';
-            tooltip.style.position = 'fixed';
-            tooltip.style.left = `${rect.left}px`;
-            tooltip.style.top = `${rect.bottom + 5}px`;
+            tooltip.style.position = 'absolute';
+            tooltip.style.left = `${rect.left + window.scrollX}px`;
+            tooltip.style.top = `${rect.bottom + window.scrollY + 5}px`;
             tooltip.style.zIndex = '1000';
             tooltip.style.backgroundColor = 'var(--background)';
-            tooltip.style.border = '1px solid var(--content-secondary)';
+            tooltip.style.border = 'none !important';
             tooltip.style.padding = '10px';
-            tooltip.style.borderRadius = '4px';
+            tooltip.style.borderRadius = '12px';
             tooltip.style.maxWidth = '300px';
-            tooltip.style.boxShadow = '0 2px 5px rgba(0,0,0,0.2)';
+            tooltip.style.boxShadow = '0 8px 32px rgba(0,0,0,0.16), 0 1.5px 6px rgba(0,0,0,0.10)';
             tooltip.style.fontSize = '0.8em';
             tooltip.style.lineHeight = '1.4';
+        }
+        
+        footnote.addEventListener('click', (e) => {
+            e.preventDefault();
+            hideActiveTooltip();
+            positionTooltip();
+            activeTooltip = tooltip;
         });
+        
+        // Prevent page scroll when scrolling tooltip (if scrollable)
+        tooltip.addEventListener('wheel', (e) => {
+            if (!tooltip.classList.contains('scrollable')) return;
+            const delta = e.deltaY;
+            const atTop = contentDiv.scrollTop === 0;
+            const atBottom = contentDiv.scrollHeight - contentDiv.scrollTop === contentDiv.clientHeight;
+            if ((delta < 0 && atTop) || (delta > 0 && atBottom)) {
+                e.preventDefault();
+            }
+        }, { passive: false });
         
         // Close tooltip when clicking the close button
         closeButton.addEventListener('click', () => {
             tooltip.style.display = 'none';
+            activeTooltip = null;
         });
         
         // Hide tooltip when clicking outside
         document.addEventListener('click', (e) => {
             if (!footnote.contains(e.target) && !tooltip.contains(e.target)) {
                 tooltip.style.display = 'none';
+                activeTooltip = null;
             }
         });
     });
@@ -221,7 +305,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         `;
                         preview.style.display = 'block';
                     }
-                }, 500);
+                }, 1000);
             });
             
             // Only hide preview when mouse leaves both the link and the preview
@@ -246,3 +330,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 }); 
+
+setTimeout(convertObsidianLinks, 1000);

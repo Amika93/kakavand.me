@@ -42,139 +42,240 @@ function updateThemeIcon(theme) {
 
 // Table of Contents functionality
 function initTableOfContents() {
+  const tocContainer = document.querySelector('.toc-container');
   const tocButton = document.querySelector('.toc-button');
   const tocContent = document.querySelector('.toc-content');
-  const nextSectionIcon = document.querySelector('.next-section-icon');
   const scrollTopButton = document.querySelector('.scroll-top-button');
   const currentSectionTitle = document.querySelector('.current-section-title');
   const progressCircle = document.querySelector('.progress-circle-value');
-  
-  if (!tocButton || !tocContent) return;
-  
-  // Get all headings in the content
-  const headings = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5, h6')).filter(heading => {
-    // Filter out headings that are in the TOC or header
-    return !heading.closest('.toc-content') && !heading.closest('header');
-  });
-  
-  // Sort headings by their position in the document
-  headings.sort((a, b) => {
-    return a.getBoundingClientRect().top - b.getBoundingClientRect().top;
-  });
-  
-  // TOC toggle functionality
+  const header = document.querySelector('header.header'); // More specific selector if possible
+  const nextSectionIcon = document.querySelector('.next-section-icon'); // Get the icon again
+
+  if (!tocContainer || !tocButton || !tocContent || !currentSectionTitle) {
+    console.log("TOC elements not found, exiting initTableOfContents");
+    return;
+  }
+
+  const contentArea = document.querySelector('div.single-content'); // Adjust if your content is elsewhere
+  if (!contentArea) {
+      console.log("Content area not found for TOC headings");
+      return;
+  }
+  const headings = Array.from(contentArea.querySelectorAll('h2, h3, h4, h5, h6')).filter(heading => heading.id);
+
+  if (headings.length === 0) {
+    console.log("No headings found for TOC");
+    tocContainer.style.display = 'none'; // Hide TOC if no headings
+    return;
+  }
+
+  headings.sort((a, b) => a.offsetTop - b.offsetTop);
+
+  let activeHeadingId = null;
+  let currentHeadingIndex = -1; // Track index of the active heading
+  let isScrolling = false; // Flag to prevent scroll updates during programmatic scroll
+
+  // --- TOC Toggle Functionality & Next Section ---
   tocButton.addEventListener('click', (e) => {
-    // If clicking on the next section icon, navigate to next section
-    if (e.target.closest('.next-section-icon') || e.target.closest('polyline') || e.target.closest('line')) {
+    // Check if the click is on the next section icon
+    if (nextSectionIcon && nextSectionIcon.contains(e.target)) {
       navigateToNextSection();
-    } else {
-      // Otherwise toggle TOC
+    } else if (!e.target.closest('.scroll-top-button')) {
+      // Otherwise, toggle TOC if not clicking scroll-to-top
       tocContent.classList.toggle('show');
     }
   });
-  
-  // Function to navigate to the next section
-  function navigateToNextSection() {
-    const currentPosition = window.scrollY + 100; // Add offset to account for sticky header
-    let nextHeading = null;
-    
-    // Find the next heading
-    for (const heading of headings) {
-      if (heading.getBoundingClientRect().top > 100) { // 100px from the top of the viewport
-        nextHeading = heading;
-        break;
-      }
-    }
-    
-    // If no next heading found, go to the first one
-    if (!nextHeading && headings.length > 0) {
-      nextHeading = headings[0];
-    }
-    
-    if (nextHeading) {
-      nextHeading.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-  
-  // Close TOC when clicking outside
+
+  // --- Close TOC when clicking outside ---
   document.addEventListener('click', (event) => {
-    const isClickInside = tocButton.contains(event.target) || tocContent.contains(event.target);
-    if (!isClickInside && tocContent.classList.contains('show')) {
+    if (!tocContainer.contains(event.target) && tocContent.classList.contains('show')) {
       tocContent.classList.remove('show');
     }
   });
-  
-  // Add smooth scrolling to TOC links
-  const tocLinks = tocContent.getElementsByTagName('a');
-  Array.from(tocLinks).forEach(link => {
+
+  const tocLinks = tocContent.querySelectorAll('a');
+  tocLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
-      const targetId = link.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
-      
+      const href = link.getAttribute('href');
+      const targetId = href.substring(1);
+      const targetElement = document.getElementById(targetId);
+
       if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth' });
+        isScrolling = true; 
+        const headerHeight = header ? header.offsetHeight : 0;
+        const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight - 10; 
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+
+        // Update URL hash without triggering navigation (pushState is better)
+        // history.pushState(null, null, href); // Keep hash update on click only
+        // Update active state immediately for responsiveness
+        updateActiveLink(targetId);
+        currentSectionTitle.textContent = targetElement.textContent;
+        // Find and set current index
+        currentHeadingIndex = headings.findIndex(h => h.id === targetId);
+
         tocContent.classList.remove('show');
+
+        setTimeout(() => {
+            isScrolling = false;
+        }, 1000); 
       }
     });
   });
-  
-  // Scroll to top functionality
+
   if (scrollTopButton) {
     scrollTopButton.addEventListener('click', () => {
+      isScrolling = true;
       window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Optionally clear hash and active state
+      history.pushState(null, null, window.location.pathname + window.location.search);
+      updateActiveLink(null);
+      currentSectionTitle.textContent = 'فهرست'; // Reset title
+      currentHeadingIndex = -1; // Reset index
+      // Manually reset progress circle
+      if (progressCircle) {
+          const circumference = 2 * Math.PI * 18;
+          progressCircle.style.strokeDashoffset = circumference; // Reset to empty
+      }
+      setTimeout(() => {
+          isScrolling = false;
+      }, 1000);
     });
   }
-  
-  // Update current section and progress indicator on scroll
-  function updateCurrentSection() {
-    if (!currentSectionTitle || headings.length === 0) return;
-    
-    const scrollPosition = window.scrollY;
-    const windowHeight = window.innerHeight;
-    const documentHeight = document.documentElement.scrollHeight;
-    
-    // Calculate scroll progress (0 to 1)
-    const scrollProgress = scrollPosition / (documentHeight - windowHeight);
-    
-    // Update progress circle
-    if (progressCircle) {
-      const circumference = 2 * Math.PI * 18; // 2πr where r=18 (from the SVG)
-      const offset = circumference - (scrollProgress * circumference);
-      progressCircle.style.strokeDashoffset = offset;
-    }
-    
-    // Find current section
-    let currentHeading = headings[0];
-    for (let i = 0; i < headings.length; i++) {
-      const heading = headings[i];
-      const headingTop = heading.getBoundingClientRect().top + window.scrollY;
-      
-      if (headingTop - 100 <= scrollPosition) {
-        currentHeading = heading;
+
+  // --- Function to Navigate to Next Section ---
+  function navigateToNextSection() {
+      if (headings.length === 0) return;
+
+      const nextIndex = (currentHeadingIndex + 1) % headings.length;
+      const nextHeading = headings[nextIndex];
+
+      if (nextHeading) {
+          isScrolling = true;
+          const headerHeight = header ? header.offsetHeight : 0;
+          const targetPosition = nextHeading.getBoundingClientRect().top + window.scrollY - headerHeight - 10;
+
+          window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+
+          const nextId = nextHeading.id;
+          history.pushState(null, null, `#${nextId}`);
+          updateActiveLink(nextId);
+          currentSectionTitle.textContent = nextHeading.textContent;
+          currentHeadingIndex = nextIndex;
+
+          tocContent.classList.remove('show'); // Close TOC if open
+
+          // Clear the isScrolling flag and update scroll-dependent elements
+          // after the smooth scroll animation is likely finished.
+          setTimeout(() => {
+              isScrolling = false;
+              handleScroll(); // Manually update progress bar and active heading based on new position
+          }, 700); // Adjust timing if scroll feels too slow/fast
+      }
+  }
+
+  function updateActiveLink(targetId) {
+    tocLinks.forEach(link => {
+      if (link.getAttribute('href') === `#${targetId}`) {
+        link.classList.add('active');
       } else {
-        break;
+        link.classList.remove('active');
+      }
+    });
+    activeHeadingId = targetId;
+  }
+
+  // --- Update Current Section on Scroll (Throttled) ---
+  function handleScroll() {
+      if (isScrolling) return; 
+
+      const headerHeight = header ? header.offsetHeight : 0;
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+
+      if (progressCircle) {
+          const scrollProgress = Math.max(0, Math.min(1, scrollPosition / (documentHeight - windowHeight)));
+          const circumference = 2 * Math.PI * 18; 
+          const offset = circumference - (scrollProgress * circumference);
+          progressCircle.style.strokeDashoffset = offset;
+      }
+
+      let currentHeading = null;
+      for (let i = headings.length - 1; i >= 0; i--) {
+          const heading = headings[i];
+          if (heading.offsetTop <= scrollPosition + headerHeight + 15) { 
+              currentHeading = heading;
+              break;
+          }
+      }
+
+      // Also handle if scrolled right to the top
+      if (scrollPosition < (headings[0]?.offsetTop - headerHeight - 15 || 10)) {
+          currentHeading = null;
+      }
+
+      const newActiveId = currentHeading ? currentHeading.id : null;
+      currentHeadingIndex = currentHeading ? headings.findIndex(h => h.id === newActiveId) : -1;
+
+      // Only update if the active heading has changed
+      if (newActiveId !== activeHeadingId) {
+          if (currentHeading) {
+              currentSectionTitle.textContent = currentHeading.textContent;
+              updateActiveLink(newActiveId);
+              // Optionally update hash silently during scroll (can be annoying)
+              // history.replaceState(null, null, `#${newActiveId}`);
+          } else {
+              // Scrolled above the first heading
+              currentSectionTitle.textContent = 'فهرست'; // Reset title
+              updateActiveLink(null);
+              currentHeadingIndex = -1;
+              // Optionally clear hash
+              // history.replaceState(null, null, window.location.pathname + window.location.search);
+          }
+      }
+  }
+
+  function throttle(func, limit) {
+    let lastFunc;
+    let lastRan;
+    return function(...args) {
+      const context = this;
+      if (!lastRan) {
+        func.apply(context, args);
+        lastRan = Date.now();
+      } else {
+        clearTimeout(lastFunc);
+        lastFunc = setTimeout(function() {
+          if ((Date.now() - lastRan) >= limit) {
+            func.apply(context, args);
+            lastRan = Date.now();
+          }
+        }, limit - (Date.now() - lastRan));
       }
     }
-    
-    // Update current section title
-    if (currentHeading) {
-      currentSectionTitle.textContent = currentHeading.textContent;
-      
-      // Update active class in TOC
-      const tocLinks = tocContent.querySelectorAll('a');
-      tocLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${currentHeading.id}`) {
-          link.classList.add('active');
-        }
-      });
-    }
   }
-  
-  // Initial update
-  updateCurrentSection();
-  
-  // Update on scroll
-  window.addEventListener('scroll', updateCurrentSection);
+
+  const throttledScrollHandler = throttle(handleScroll, 100); 
+  window.addEventListener('scroll', throttledScrollHandler);
+
+  handleScroll(); 
+  if(window.location.hash) {
+      const loadId = window.location.hash.substring(1);
+      const loadElement = document.getElementById(loadId);
+      if (loadElement) {
+          setTimeout(() => {
+              const headerHeight = header ? header.offsetHeight : 0;
+              const loadPosition = loadElement.getBoundingClientRect().top + window.scrollY - headerHeight - 10;
+              window.scrollTo({ top: loadPosition, behavior: 'auto' }); 
+              isScrolling = true; 
+              setTimeout(() => { isScrolling = false; }, 50); 
+          }, 100);
+      }
+  }
 }

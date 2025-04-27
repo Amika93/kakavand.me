@@ -25,3 +25,88 @@ p, div, span {
 h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
 }
+
+/* Modern footnote tooltip styling with header */
+.footnote-tooltip {
+  color: inherit;
+  background: var(--background, #fff);
+  border: none !important;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.16), 0 1.5px 6px rgba(0,0,0,0.10);
+  font-family: inherit;
+  font-size: 0.95em;
+  line-height: 1.6;
+  max-width: 320px;
+  padding: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.footnote-tooltip-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 8px 8px 0 0;
+  background: transparent;
+  position: relative;
+  z-index: 2;
+  flex: 0 0 auto;
+}
+.footnote-tooltip-header button {
+  background: none;
+  border: none !important;
+  color: var(--content-secondary, #888);
+  font-size: 1.2em;
+  cursor: pointer;
+  padding: 0 5px;
+  line-height: 1;
+}
+
+.footnote-tooltip .footnote-content {
+  display: block;
+  max-height: 6.4em !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  padding: 8px 16px 10px 10px;
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* IE 10+ */
+}
+.footnote-tooltip .footnote-content::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+
+.footnote-tooltip[style] {
+  border: none !important;
+}
+
+.footnote-tooltip a {
+  color: var(--link-color, #0070f3);
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+.footnote-tooltip a:hover {
+  color: var(--link-hover, #0050a3);
+}
+
+/* --- Dark Mode Styling for Footnote Tooltip --- */
+[data-theme="dark"] .footnote-tooltip,
+.dark .footnote-tooltip {
+  background: var(--background-dark, #23242a) !important;
+  color: var(--content-dark, #f2f2f2) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.44), 0 1.5px 6px rgba(0,0,0,0.32);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+[data-theme="dark"] .footnote-tooltip .footnote-content,
+.dark .footnote-tooltip .footnote-content {
+  color: var(--content-dark, #f2f2f2) !important;
+}
+[data-theme="dark"] .footnote-tooltip-header button,
+.dark .footnote-tooltip-header button {
+  color: var(--content-secondary-dark, #bbb) !important;
+}
+
+/* Remove empty scrollable override */
