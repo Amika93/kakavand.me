@@ -15,6 +15,10 @@
     font-size: medium;
     font-weight: normal;
 }
+.medium {
+    font-size: 1.4em;
+    font-weight:600
+}
 
 .monospace {
     font-family: "Ravi";

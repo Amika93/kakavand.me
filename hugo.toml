@@ -1,8 +1,9 @@
 baseURL = 'https://kakavand.me/'
 languageCode = 'fa-IR'
 defaultContentLanguage = "fa"
-title = 'نوشته‌های امین کاکاوند'
+title = 'امین کاکاوند'
 theme = "typo-1.13.0"
+buildFuture = true
 
 [taxonomies]
 tag = 'tags'
@@ -17,7 +18,7 @@ colorPalette = 'default'
 hideHeader = false
 
 # Intro on main page, content is markdown
-homeIntroTitle = 'سلام...'
+homeIntroTitle = ''
 homeIntroContent = """
 به بهترین **وبلاگ امین کاکاوند** در اینترنت خوش اومدید!
 
@@ -54,6 +55,10 @@ url = "https://www.instagram.com/kakavand.me/"
 name = "linkedin"
 url = "https://www.linkedin.com/in/aminkakavand/"
 
+[[params.social]]
+name = "rss"
+url = "/index.xml"
+
 # Main menu pages
 [[params.menu]]
 name = "خانه"
@@ -62,10 +67,6 @@ url = "/"
 [[params.menu]]
 name = "درباره من"
 url = "/about"
-
-[[params.menu]]
-name = "بایگانی"
-url = "/archive"
 
 # Syntax highligth on code blocks
 [markup]

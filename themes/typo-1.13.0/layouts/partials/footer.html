@@ -16,3 +16,32 @@
 {{ if .Param "math" }}
 {{ partialCached "math.html" . }}
 {{ end }}
+
+<!-- Jalali Date Conversion -->
+<script src="https://cdn.jsdelivr.net/npm/jalaali-js/dist/jalaali.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const dateElements = document.querySelectorAll('.gregorian-date');
+  const jalaaliMonths = [
+    "فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور",
+    "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند"
+  ];
+
+  dateElements.forEach(el => {
+    const gregorianDate = el.getAttribute('data-date');
+    if (gregorianDate) {
+      try {
+        const [gy, gm, gd] = gregorianDate.split('-').map(Number);
+        const jDate = jalaali.toJalaali(gy, gm, gd);
+        // Format: روز ماه سال (e.g., 26 دی 1402)
+        const formattedJalaali = `${jDate.jd} ${jalaaliMonths[jDate.jm - 1]} ${jDate.jy}`;
+        el.textContent = formattedJalaali;
+      } catch (e) {
+        console.error("Error converting date:", gregorianDate, e);
+        // Keep original date if conversion fails
+      }
+    }
+  });
+});
+</script>
+<!-- End Jalali Date Conversion -->

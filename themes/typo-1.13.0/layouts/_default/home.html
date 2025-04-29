@@ -33,29 +33,54 @@
 {{/* Collection Section */}}
 
 {{ if .Site.Params.homeCollection }}
-
 <div class="list-container">
     {{ with .Site.Params.homeCollectionTitle}}
-    <h1> {{ . }} </h1>
+    <h1 class="medium"> {{ . }} </h1>
     {{ end }}
 
-    {{ $pages := where .Site.RegularPages "Section" .Site.Params.homeCollection
-    }}
+    {{/* Fetch only the first 5 pages from the specified collection */}}
+    {{ $pagesToList := first 5 (where .Site.RegularPages "Section" .Site.Params.homeCollection) }}
 
-    {{ $paginationSize := 1}}
-    {{ if (gt .Site.Params.paginationSize 0) }}
-    {{ $paginationSize = .Site.Params.paginationSize }}
+    {{ range $pagesToList }}
+      {{ partial "post-entry.html" . }}
     {{ end }}
 
-    {{ $paginator := .Paginate $pages $paginationSize }}
+    {{/* Link to the main posts list page - Aligned */}}
+    <div class="post-line">
+      <p class="line-date">&nbsp;</p> <!-- Placeholder for date column -->
+      <div>
+        <p class="line-title"> <!-- Reusing class for alignment -->
+          <a href="{{ "/posts/" | relLangURL }}">همه نوشته‌ها ←</a>
+        </p>
+      </div>
+    </div>
 
-    {{ range $index, $page := $paginator.Pages }}
-    {{ partial "post-entry.html" $page}}
-    {{ end }}
-
-    {{ partial "pagination-controls.html" $paginator}}
-
-    {{ end }}
 </div>
+{{ end }}
+{{/* End Modified Posts Section */}}
+
+{{/* Videos Section */}}
+<div class="list-container videos-list">  
+    <h1 class="medium">ویدئوها</h1>
+
+    {{/* Fetch only the first 5 pages from the videos section */}}
+    {{ $videoPagesToList := first 5 (where .Site.RegularPages "Section" "videos") }}
+
+    {{ range $videoPagesToList }}
+      {{ partial "post-entry.html" . }}
+    {{ end }}
+
+    {{/* Link to the main videos list page - Aligned */}}
+    <div class="post-line">
+      <p class="line-date">&nbsp;</p> <!-- Placeholder for date column -->
+      <div>
+        <p class="line-title"> <!-- Reusing class for alignment -->
+          <a href="{{ "/videos/" | relLangURL }}">همه ویدئوها ←</a>
+        </p>
+      </div>
+    </div>
+
+</div>
+{{/* End Videos Section */}}
 
 {{ end }}

@@ -5,7 +5,9 @@
     {{ $dateFormat = .}}
     {{ end }}
 
-    <p class="line-date">{{ .Date.Format $dateFormat }} </p>
+    <p class="line-date">
+      <span class="gregorian-date" data-date="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format $dateFormat }}</span>
+    </p>
 
     <div>
         <p class="line-title">

@@ -1,6 +1,11 @@
 @font-face {
     font-family: 'Ravi FaNum';
-    src: url('/static/fonts/RaviFaNum-Light.woff2') format('woff2');
+    src: url('/static/fonts/RaviFaNum-Light.eot'); /* IE9 Compat Modes */
+    src: url('/static/fonts/RaviFaNum-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('/static/fonts/RaviFaNum-Light.woff2') format('woff2'), /* Super Modern Browsers */
+         url('/static/fonts/RaviFaNum-Light.woff') format('woff'), /* Modern Browsers */
+         url('/static/fonts/RaviFaNum-Light.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('/static/fonts/RaviFaNum-Light.svg#RaviFaNum') format('svg'); /* Legacy iOS */
     font-weight: normal;
     font-style: normal;
 }
@@ -8,7 +13,12 @@
 
 @font-face {
     font-family: 'Ravi FaNum';
-    src: url('/static/fonts/RaviFaNum-Bold.woff2') format('woff2');
+    src: url('/static/fonts/RaviFaNum-Bold.eot'); /* IE9 Compat Modes */
+    src: url('/static/fonts/RaviFaNum-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('/static/fonts/RaviFaNum-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+         url('/static/fonts/RaviFaNum-Bold.woff') format('woff'), /* Modern Browsers */
+         url('/static/fonts/RaviFaNum-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('/static/fonts/RaviFaNum-Bold.svg#RaviFaNum') format('svg'); /* Legacy iOS */
     font-weight: bold;
     font-style: normal;
 }
@@ -92,21 +102,11 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--link-hover, #0050a3);
 }
 
-/* --- Dark Mode Styling for Footnote Tooltip --- */
-[data-theme="dark"] .footnote-tooltip,
-.dark .footnote-tooltip {
-  background: var(--background-dark, #23242a) !important;
-  color: var(--content-dark, #f2f2f2) !important;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.44), 0 1.5px 6px rgba(0,0,0,0.32);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-[data-theme="dark"] .footnote-tooltip .footnote-content,
-.dark .footnote-tooltip .footnote-content {
-  color: var(--content-dark, #f2f2f2) !important;
-}
-[data-theme="dark"] .footnote-tooltip-header button,
-.dark .footnote-tooltip-header button {
-  color: var(--content-secondary-dark, #bbb) !important;
+/* Style for Jalali converted dates */
+.gregorian-date {
+  font-size: 0.85em; /* Make font slightly smaller */
+  color: var(--color-text-light); /* Use a lighter text color variable from the theme */
+  opacity: 0.8; /* Make it slightly transparent for less emphasis */
 }
 
 /* Remove empty scrollable override */
