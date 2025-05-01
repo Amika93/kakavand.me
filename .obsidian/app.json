@@ -1,5 +1,7 @@
 {
   "alwaysUpdateLinks": true,
   "newFileLocation": "folder",
-  "newFileFolderPath": "content/posts"
+  "newFileFolderPath": "content/posts",
+  "attachmentFolderPath": "content/media",
+  "newLinkFormat": "shortest"
 }

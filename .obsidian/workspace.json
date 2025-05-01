@@ -11,10 +11,14 @@
             "id": "ff0aaf5649177990",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "content/about.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "about"
             }
           }
         ]
@@ -174,7 +178,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "63fbe061d6538b82",
+  "active": "ff0aaf5649177990",
   "lastOpenFiles": [
     "content/posts/Startup.md",
     "themes/typo-1.13.0/static/favicon-32x32.png",
