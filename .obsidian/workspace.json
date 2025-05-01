@@ -4,35 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "1816c216521018f9",
+        "id": "17ae011f35232c98",
         "type": "tabs",
         "children": [
           {
-            "id": "62a8aa84e246bb2f",
+            "id": "ff0aaf5649177990",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/posts/Startup.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Startup"
-            }
-          },
-          {
-            "id": "32ec84191d6ba56f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/posts/test-features.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "test-features"
+              "title": "New tab"
             }
           }
         ]
@@ -156,13 +138,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/posts/Checklist Hero.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Checklist Hero"
+              "title": "Outline"
             }
           },
           {
@@ -193,8 +174,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "62a8aa84e246bb2f",
+  "active": "63fbe061d6538b82",
   "lastOpenFiles": [
+    "content/posts/Startup.md",
     "themes/typo-1.13.0/static/favicon-32x32.png",
     "themes/typo-1.13.0/static/favicon-16x16.png",
     "themes/typo-1.13.0/static/android-chrome-192x192.png",
@@ -207,7 +189,6 @@
     "themes/typo-1.13.0/static/web-app-manifest-192x192.png",
     "themes/typo-1.13.0/static/site.webmanifest",
     "themes/typo-1.13.0/static/favicon.svg",
-    "themes/typo-1.13.0/static/favicon-96x96.png",
     "themes/typo-1.13.0/layouts/page/subscribe.html",
     "content/posts/Aaron Levie.md",
     "content/posts/‌Bits Atoms Strategy.md",
@@ -223,7 +204,6 @@
     "content/posts/Masa.md",
     "content/posts/Vibe Coding.md",
     "content/posts/callout-test.md",
-    "content/posts/Startup.md",
     "content/videos/Transistors.md",
     "content/posts/Disrupt.md",
     "content/posts/fake.md",
