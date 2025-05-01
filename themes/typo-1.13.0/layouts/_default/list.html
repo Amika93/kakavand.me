@@ -26,6 +26,11 @@
 
     {{ end }}
 
+    {{/* Subscription Link */}}
+    {{ if ne .RelPermalink "/subscribe/" }}
+    {{ partial "subscribe_link.html" . }}
+    {{ end }}
+
     {{ partial "pagination-controls.html" $paginator}}
 
 </div>

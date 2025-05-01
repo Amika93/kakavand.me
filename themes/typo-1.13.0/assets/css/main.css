@@ -81,6 +81,19 @@ a:hover {
   text-decoration-color: #bf590b;
 }
 
+/* Subscription link styling */
+.subscribe-footer-link a {
+  text-decoration: underline;
+  text-decoration-color: rgba(228, 106, 13, 0.843);
+  text-decoration-thickness: 2.5px;
+  text-underline-offset: 2px;
+}
+
+.subscribe-footer-link a:hover {
+  /* Inherits color change from general 'a:hover' */
+  text-decoration-color: #bf590b; /* Match hover underline color */
+}
+
 /* Code blocks */
 
 pre {
@@ -276,7 +289,7 @@ footer a {
 }
 
 .list-container {
-  padding-bottom: 3rem;
+  padding-bottom: orem;
 }
 
 .pagination {
