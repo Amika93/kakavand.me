@@ -11,14 +11,14 @@
             "id": "ff0aaf5649177990",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "markdown",
               "state": {
-                "aFile": "download_images.py",
-                "bFile": "download_images.py",
-                "aRef": ""
+                "file": "content/posts/Aaron Levie.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "diff",
-              "title": "Diff: download_images.py"
+              "icon": "lucide-file",
+              "title": "Aaron Levie"
             }
           }
         ]
