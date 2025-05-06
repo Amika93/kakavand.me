@@ -1,4 +1,4 @@
-name: Deploy to Sotoon.ir
+name: Deploy to S3
 
 on:
   push:
@@ -26,7 +26,7 @@ jobs:
       - name: Install AWS CLI
         uses: unfor19/install-aws-cli-action@v1
 
-      - name: Deploy to Sotoon.ir
+      - name: Deploy to S3
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.ARVAN_ACCESS_KEY }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.ARVAN_SECRET_KEY }}
