@@ -8,18 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "5c3f091f675cd9cd",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "static/media/Because-...-1024x682.jpg"
-              },
-              "icon": "lucide-image",
-              "title": "Because-...-1024x682"
-            }
-          },
-          {
             "id": "c9f0be510b5eb4f5",
             "type": "leaf",
             "state": {
@@ -33,8 +21,7 @@
               "title": "Aaron Levie"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -193,11 +180,32 @@
   },
   "active": "c9f0be510b5eb4f5",
   "lastOpenFiles": [
+    "content/media/Pasted image 20250507022910.png",
+    "content/videos/Transistors.md",
+    "public/media/Transistor.jpg",
+    "static/media/Transistor.jpg",
+    "public/media/Transistor.jpg.crdownload",
+    "static/media/Transistor.jpg.crdownload",
+    "content/posts/Kitsch.md",
+    "public/posts/kitsch/index.html",
+    "public/posts/kitsch",
+    "content/posts/The Wire.md",
+    "content/posts/Checklist Manifesto.md",
+    "content/posts/Checklist.md",
+    "content/posts/Checklist Hero.md",
+    "content/posts/mnms.md",
+    "content/posts/Patrick Collison.md",
+    "content/posts/Netflix.md",
+    "content/posts/Reed Hastings.md",
+    "content/posts/Jeff Bezos.md",
+    "public/media/Pasted image 20250507022910.png",
+    "content/posts/‌Bits Atoms Strategy.md",
+    "content/posts/PG.md",
+    "content/posts/Aaron Levie.md",
     "content/posts/First Principles.md",
     "content/posts/Naval.md",
     "content/posts/Unbundling.md",
     "content/posts/Masa.md",
-    "content/posts/mnms.md",
     "content/posts/Thiel.md",
     "content/posts/Munger.md",
     "content/posts/The Big Short.md",
@@ -207,36 +215,15 @@
     "static/media/Bloomberg-Terminal.jpg",
     "static/media/Bloomberg-Terminals.jpg",
     "static/media/boeing-299-449x298.jpg",
-    "static/media/brand-1024x768.png",
-    "static/media/cq5dam.web_.1200.675-449x304.jpeg",
-    "static/media/cq5dam.web_.1200.675.jpeg",
-    "static/media/craigsunbundling.jpeg",
     "content/posts/Pony-Ma.md",
     "content/posts/Bloomberg.md",
     "content/posts/Tencent.md",
     "content/posts/Disrupt.md",
-    "content/posts/Simons.md",
-    "content/posts/fake.md",
     "public/assets/combined.min.bf8ec4199c2c0c217e6ba1d1a9c85c17264fa62d587741a630bc15c72cea94c5.css",
-    "content/posts/X V. Threads.md",
     "public/assets/combined.min.9e0fa8ce8f312571cfbc7a47d47fcecebec9b49402efabf7c4cab51421db5c63.css",
-    "content/posts/Aaron Levie.md",
-    "content/posts/Thaw.md",
-    "content/posts/Startup.md",
-    "content/posts/The Wire.md",
     "static/media",
-    "content/about.md",
     "public/twitter-v-threads/index.html",
     "public/twitter-v-threads",
-    "public/xv/index.html",
-    "public/xv",
-    "content/posts/Vibe Coding.md",
-    "public/posts/mnms/index.html",
-    "public/posts/mnms",
-    "public/van-halen-no-brown-mms-checklist/index.html",
-    "content/posts/PG.md",
-    "content/posts/Reed Hastings.md",
-    "content/posts/Patrick Collison.md",
-    "content/posts/Netflix.md"
+    "public/xv/index.html"
   ]
 }
