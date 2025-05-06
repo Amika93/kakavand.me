@@ -8,6 +8,9 @@ tags:
 toc: true
 hideBackToTop: true
 readTime: false
+showTags: false
+aliases:
+  - /thaw
 ---
 ![](/media/Precz.jpg)
 

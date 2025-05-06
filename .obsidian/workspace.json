@@ -4,33 +4,33 @@
     "type": "split",
     "children": [
       {
-        "id": "17ae011f35232c98",
+        "id": "8dcfb8f45f8671d7",
         "type": "tabs",
         "children": [
           {
-            "id": "ff0aaf5649177990",
+            "id": "5c3f091f675cd9cd",
             "type": "leaf",
             "state": {
               "type": "image",
               "state": {
-                "file": "content/media/Vladimir_Vinovich.png"
+                "file": "static/media/Because-...-1024x682.jpg"
               },
               "icon": "lucide-image",
-              "title": "Vladimir_Vinovich"
+              "title": "Because-...-1024x682"
             }
           },
           {
-            "id": "4b369bbb59395661",
+            "id": "c9f0be510b5eb4f5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/fake.md",
+                "file": "content/posts/First Principles.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "fake"
+              "title": "First Principles"
             }
           }
         ],
@@ -66,7 +66,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:clippings",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -191,52 +191,52 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4b369bbb59395661",
+  "active": "c9f0be510b5eb4f5",
   "lastOpenFiles": [
-    "content/posts/Thaw.md",
-    "public/media/future-bin.jpg",
-    "content/media/future-bin.jpg",
-    "content/media/Precz.jpg",
-    "content/media/Amin Kakavand.jpg",
-    "public/media/Precz 800x401.jpg",
-    "content/media/Precz.jpg.crdownload",
-    "public/media/Amin Kakavand.jpg",
-    "public/media/Precz.jpg",
-    "public/media/nntaleb-missile.png",
-    "content/media/nntaleb-missile.png",
-    "public/media/Johnthesavage-X.png",
-    "content/media/Johnthesavage-X.png.crdownload",
-    "content/about.md",
-    "content/media/Vladimir.md",
-    "public/media/index.xml",
-    "public/media/vladimir/index.html",
-    "public/media/vladimir",
-    "public/media/page/1/index.html",
-    "public/media/page/1",
-    "public/media/page",
-    "public/media/index.html",
-    "content/posts/Aaron Levie.md",
-    "download_images.py",
-    "content/posts/Startup.md",
-    "content/posts/‌Bits Atoms Strategy.md",
-    "content/posts/Checklist Hero.md",
-    "content/subscribe.md",
+    "content/posts/Naval.md",
+    "content/posts/Unbundling.md",
     "content/posts/Masa.md",
-    "content/posts/Vibe Coding.md",
-    "content/posts/callout-test.md",
-    "content/videos/Transistors.md",
-    "content/posts/Disrupt.md",
-    "content/posts/fake.md",
-    "content/posts/test-features.md",
+    "content/posts/mnms.md",
+    "content/posts/Thiel.md",
+    "content/posts/Munger.md",
+    "content/posts/The Big Short.md",
+    "static/media/Because-...-1024x682.jpg",
+    "static/media/Beefweet.jpg",
+    "static/media/Big-Piece-of-ST-1024x682.jpg",
+    "static/media/Bloomberg-Terminal.jpg",
+    "static/media/Bloomberg-Terminals.jpg",
+    "static/media/boeing-299-449x298.jpg",
+    "static/media/brand-1024x768.png",
+    "static/media/cq5dam.web_.1200.675-449x304.jpeg",
+    "static/media/cq5dam.web_.1200.675.jpeg",
+    "static/media/craigsunbundling.jpeg",
+    "content/posts/Pony-Ma.md",
     "content/posts/Bloomberg.md",
-    "content/posts/پست.md",
-    "content/posts/callout-test 1.md",
-    "content/archive/index.md",
-    "content/posts/Checklist Manifesto.md",
-    "content/posts/Checklist.md",
-    "layouts/_default/_markup/render-hook.md",
+    "content/posts/Tencent.md",
+    "content/posts/Disrupt.md",
+    "content/posts/Simons.md",
+    "content/posts/fake.md",
+    "public/assets/combined.min.bf8ec4199c2c0c217e6ba1d1a9c85c17264fa62d587741a630bc15c72cea94c5.css",
     "content/posts/X V. Threads.md",
+    "public/assets/combined.min.9e0fa8ce8f312571cfbc7a47d47fcecebec9b49402efabf7c4cab51421db5c63.css",
+    "content/posts/Aaron Levie.md",
+    "content/posts/Thaw.md",
+    "content/posts/Startup.md",
     "content/posts/The Wire.md",
-    "content/posts/Van Halen Checklist.md"
+    "static/media",
+    "content/about.md",
+    "public/twitter-v-threads/index.html",
+    "public/twitter-v-threads",
+    "public/xv/index.html",
+    "public/xv",
+    "content/posts/Vibe Coding.md",
+    "public/posts/mnms/index.html",
+    "public/posts/mnms",
+    "public/van-halen-no-brown-mms-checklist/index.html",
+    "content/posts/PG.md",
+    "content/posts/Reed Hastings.md",
+    "content/posts/Patrick Collison.md",
+    "content/posts/Netflix.md",
+    "content/posts/First Principles.md"
   ]
 }
