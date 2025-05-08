@@ -6,7 +6,7 @@ showTags:
 hidePagination: true
 ---
 
-![myimage](/media/amin.jpg)
+![](/media/amin.jpg)
 
 > **زمان:** حوالی سال ۸۵-۸۶
 > 
