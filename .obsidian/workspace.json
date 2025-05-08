@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/Kitsch.md",
+                "file": "content/posts/Disrupt.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Kitsch"
+              "title": "Disrupt"
             }
           }
         ]
@@ -180,6 +180,8 @@
   },
   "active": "c9f0be510b5eb4f5",
   "lastOpenFiles": [
+    "content/posts/Unbundling.md",
+    "content/posts/Kitsch.md",
     "public/kitsch/index.html",
     "public/kitsch",
     "content/posts/Aaron Levie.md",
@@ -189,7 +191,6 @@
     "static/media/Transistor.jpg",
     "public/media/Transistor.jpg.crdownload",
     "static/media/Transistor.jpg.crdownload",
-    "content/posts/Kitsch.md",
     "public/posts/kitsch/index.html",
     "public/posts/kitsch",
     "content/posts/The Wire.md",
@@ -206,7 +207,6 @@
     "content/posts/PG.md",
     "content/posts/First Principles.md",
     "content/posts/Naval.md",
-    "content/posts/Unbundling.md",
     "content/posts/Masa.md",
     "content/posts/Thiel.md",
     "content/posts/Munger.md",
@@ -224,7 +224,6 @@
     "public/assets/combined.min.bf8ec4199c2c0c217e6ba1d1a9c85c17264fa62d587741a630bc15c72cea94c5.css",
     "public/assets/combined.min.9e0fa8ce8f312571cfbc7a47d47fcecebec9b49402efabf7c4cab51421db5c63.css",
     "static/media",
-    "public/twitter-v-threads/index.html",
-    "public/twitter-v-threads"
+    "public/twitter-v-threads/index.html"
   ]
 }
