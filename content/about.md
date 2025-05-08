@@ -6,7 +6,7 @@ showTags:
 hidePagination: true
 ---
 
-![myimage](/media/aminkakavand.jpg)
+![myimage](/media/amin.jpg)
 
 > **زمان:** حوالی سال ۸۵-۸۶
 > 

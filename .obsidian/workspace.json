@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/Disrupt.md",
+                "file": "content/about.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Disrupt"
+              "title": "about"
             }
           }
         ]
@@ -180,6 +180,9 @@
   },
   "active": "c9f0be510b5eb4f5",
   "lastOpenFiles": [
+    "content/subscribe.md",
+    "content/posts/Disrupt.md",
+    "static/media/Amin.jpg",
     "content/posts/Unbundling.md",
     "content/posts/Kitsch.md",
     "public/kitsch/index.html",
@@ -216,11 +219,9 @@
     "static/media/Big-Piece-of-ST-1024x682.jpg",
     "static/media/Bloomberg-Terminal.jpg",
     "static/media/Bloomberg-Terminals.jpg",
-    "static/media/boeing-299-449x298.jpg",
     "content/posts/Pony-Ma.md",
     "content/posts/Bloomberg.md",
     "content/posts/Tencent.md",
-    "content/posts/Disrupt.md",
     "public/assets/combined.min.bf8ec4199c2c0c217e6ba1d1a9c85c17264fa62d587741a630bc15c72cea94c5.css",
     "public/assets/combined.min.9e0fa8ce8f312571cfbc7a47d47fcecebec9b49402efabf7c4cab51421db5c63.css",
     "static/media",
