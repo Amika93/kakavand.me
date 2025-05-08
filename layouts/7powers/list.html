@@ -1,0 +1,38 @@
+{{ define "main" }}
+<main>
+  <div class="intro">
+    <div class="post-content">{{ .Content }}</div>
+  </div>
+
+  <div class="list-container">
+    {{/* List all direct sub-sections (parts/intro) under /7powers, sorted by weight */}}
+    {{ $sections := .Sections.ByWeight }}
+    {{ range $sections }}
+      <section class="section-block">
+        <h1 class="medium">{{ .Title }} {{ if .Draft }}<span class="draft-notice"> (پیش‌نویس)</span>{{ end }}</h1>
+        {{ if .Content }}<div class="section-summary">{{ .Content }}</div>{{ end }}
+        {{ $chapters := .Pages.ByWeight }}
+        {{ if gt (len $chapters) 0 }}
+          <ul class="chapters-list">
+            {{ range $chapters }}
+              <li>
+                <p><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ if .Draft }}<span class="draft-notice"> (پیش‌نویس)</span>{{ end }}</p>
+              </li>
+            {{ end }}
+          </ul>
+        {{ end }}
+      </section>
+    {{ end }}
+  </div>
+
+  <style>
+    .intro { margin-bottom: 2em; }
+    .list-container { margin: 2em 0; }
+    .section-block { margin-bottom: 2em; padding-bottom: 1em; border-bottom: 1px solid #eee; }
+    .section-block h2 { margin-top: 0; }
+    .section-summary { color: #666; margin-bottom: 1em; }
+    .chapters-list { list-style-type: disc; margin-left: 2em; }
+    .draft-notice { color: #ff9800; font-size: 0.85em; font-style: italic; margin-right: 0.5em; }
+  </style>
+</main>
+{{ end }}

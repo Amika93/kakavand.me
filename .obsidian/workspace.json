@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/about.md",
+                "file": "content/7powers/part1/scale.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "about"
+              "title": "scale"
             }
           }
         ]
@@ -178,25 +178,36 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "63fbe061d6538b82",
+  "active": "c9f0be510b5eb4f5",
   "lastOpenFiles": [
+    "content/7powers/intro/introduction.md",
+    "content/7powers/part1/scale.md",
+    "public/7powers/part1/scale/index.html",
+    "public/7powers/part1/scale",
+    "content/7powers/part1/scale",
+    "content/7powers/intro/_index.md",
+    "content/7powers/_index.md",
+    "content/about.md",
+    "public/7powers/part2/index.xml",
+    "public/7powers/part2/index.html",
+    "public/7powers/part2",
+    "public/7powers/part1/index.xml",
+    "public/7powers/part1/index.html",
+    "public/7powers/part1",
+    "layouts/7powers/list.html",
+    "content/7powers/part2/_index.md",
+    "content/7powers/part1/_index.md",
     "public/media/Amin.jpg",
     "content/subscribe.md",
     "content/posts/Disrupt.md",
     "static/media/Amin.jpg",
     "content/posts/Unbundling.md",
     "content/posts/Kitsch.md",
-    "public/kitsch/index.html",
-    "public/kitsch",
     "content/posts/Aaron Levie.md",
     "content/media/Pasted image 20250507022910.png",
     "content/videos/Transistors.md",
     "public/media/Transistor.jpg",
     "static/media/Transistor.jpg",
-    "public/media/Transistor.jpg.crdownload",
-    "static/media/Transistor.jpg.crdownload",
-    "public/posts/kitsch/index.html",
-    "public/posts/kitsch",
     "content/posts/The Wire.md",
     "content/posts/Checklist Manifesto.md",
     "content/posts/Checklist.md",
@@ -209,22 +220,9 @@
     "public/media/Pasted image 20250507022910.png",
     "content/posts/‌Bits Atoms Strategy.md",
     "content/posts/PG.md",
-    "content/posts/First Principles.md",
-    "content/posts/Naval.md",
-    "content/posts/Masa.md",
-    "content/posts/Thiel.md",
-    "content/posts/Munger.md",
-    "content/posts/The Big Short.md",
     "static/media/Because-...-1024x682.jpg",
     "static/media/Beefweet.jpg",
     "static/media/Big-Piece-of-ST-1024x682.jpg",
-    "static/media/Bloomberg-Terminal.jpg",
-    "static/media/Bloomberg-Terminals.jpg",
-    "content/posts/Pony-Ma.md",
-    "content/posts/Bloomberg.md",
-    "public/assets/combined.min.bf8ec4199c2c0c217e6ba1d1a9c85c17264fa62d587741a630bc15c72cea94c5.css",
-    "public/assets/combined.min.9e0fa8ce8f312571cfbc7a47d47fcecebec9b49402efabf7c4cab51421db5c63.css",
-    "static/media",
-    "public/twitter-v-threads/index.html"
+    "static/media/Bloomberg-Terminal.jpg"
   ]
 }

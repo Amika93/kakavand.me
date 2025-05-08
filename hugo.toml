@@ -68,6 +68,10 @@ url = "/"
 name = "درباره من"
 url = "/about"
 
+[[params.menu]]
+name = "۷ قدرت"
+url = "/7powers"
+
 # Syntax highligth on code blocks
 [markup]
 [markup.highlight]
