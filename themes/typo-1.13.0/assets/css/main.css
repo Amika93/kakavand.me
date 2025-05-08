@@ -412,8 +412,10 @@ footer a {
 
 .single-pagination-container-next {
   display: flex;
+  justify-content: flex-end;
   min-height: 100%;
   padding: .5rem;
+  font-size: 1rem;
 }
 
 .single-pagination-container-prev {
@@ -421,6 +423,7 @@ footer a {
   min-height: 100%;
   padding: .5rem;
   float: right;
+  font-size: 1rem;
 }
 
 /* Table of contents */
