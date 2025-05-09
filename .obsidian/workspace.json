@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/7powers/_index.md",
+                "file": "content/7powers/intro/introduction.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "_index"
+              "title": "introduction"
             }
           }
         ]
@@ -180,6 +180,7 @@
   },
   "active": "c9f0be510b5eb4f5",
   "lastOpenFiles": [
+    "content/7powers/_index.md",
     "public/assets/combined.min.774c8d997e798ac6098119ceacd9cfb8b7b1300accbe514b182b4479712addbe.css",
     "public/assets/combined.min.9ef9f44fd476414cb699a42b8f787e5ded43ad48d9be31396e6bc9191fb1f246.css",
     "themes/typo-1.13.0/layouts/_default/_markup/render-link.html",
@@ -192,9 +193,7 @@
     "public/assets/combined.min.c2183429e840efeb139778d451836d0ae1e6e7b25fb767c44a7923055970e19b.css",
     "public/assets/combined.min.fee6ffd9f5cf3547517a9a89d144ced1c7865b3422a26b1ab5289c87f5a2660c.css",
     "public/assets/combined.min.8ffdd7bf8b753ac4ed0f8f4f64dc007280351cdf83b8383c3dc1cfc45c9a03b6.css",
-    "public/assets/combined.min.2a834b56bf16504c763654abc93292fe6d20f3d8209c3b1b3656612a28c0991d.css",
     "content/7powers/part1/scale.md",
-    "content/7powers/_index.md",
     "content/about.md",
     "content/7powers/part2/_index.md",
     "content/7powers/part1/_index.md",
