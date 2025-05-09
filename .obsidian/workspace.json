@@ -180,10 +180,10 @@
   },
   "active": "c9f0be510b5eb4f5",
   "lastOpenFiles": [
-    "content/7powers/intro/_index.md",
     "content/7powers/_index.md",
-    "content/posts/fake.md",
     "content/7powers/intro/introduction.md",
+    "content/7powers/intro/_index.md",
+    "content/posts/fake.md",
     "public/assets/combined.min.774c8d997e798ac6098119ceacd9cfb8b7b1300accbe514b182b4479712addbe.css",
     "public/assets/combined.min.9ef9f44fd476414cb699a42b8f787e5ded43ad48d9be31396e6bc9191fb1f246.css",
     "themes/typo-1.13.0/layouts/_default/_markup/render-link.html",
