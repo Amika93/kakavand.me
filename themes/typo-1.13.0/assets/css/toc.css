@@ -159,14 +159,14 @@
 /* Mobile styles */
 @media (max-width: 768px) {
   .toc-container {
-    bottom: 1rem;
+/*    bottom: 1.5rem; */
   }
   
   .toc-button {
     max-width: 180px;
-    font-size: 0.8rem;
+/*    font-size: 0.8rem;
     padding: 0.4rem 0.8rem;
-  }
+*/  }
   
   .current-section-title {
     max-width: 120px;
