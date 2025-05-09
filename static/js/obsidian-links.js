@@ -59,12 +59,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function convertObsidianLinks() {
-        // Only process main content area
-        const contentElements = document.querySelectorAll('main, .post-content, .content, article, .single-content');
-        if (contentElements.length === 0) return;
-        contentElements.forEach(element => {
-            convertObsidianLinksInNode(element);
-        });
+        // Only process single post content area
+        const contentElement = document.querySelector('.single-content');
+        if (!contentElement) return; // Only run on single post pages
+        convertObsidianLinksInNode(contentElement);
     }
 
     convertObsidianLinks();
@@ -79,6 +77,9 @@ document.addEventListener('DOMContentLoaded', function() {
             window.obsidianCalloutsInit();
         }
     }
+
+    // If the delayed call is still desired, place it here:
+    setTimeout(convertObsidianLinks, 1000);
 
     // Handle footnotes
     // Select only footnote reference links NOT inside .footnotes and only in main content
@@ -104,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Create tooltip
         const tooltip = document.createElement('div');
         tooltip.className = 'footnote-tooltip';
-        tooltip.style.border = 'none !important';
+        // tooltip.style.border = 'none !important'; // Controlled by CSS
         
         // Add content and close button to tooltip
         tooltip.innerHTML = `
@@ -117,9 +118,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const closeButton = tooltip.querySelector('.footnote-tooltip-header button');
         // Cap visible lines to 4 with scrolling
         if (contentDiv) {
-            contentDiv.style.maxHeight = '8.4em'; // 4 lines * 1.6em line-height
-            contentDiv.style.overflowY = 'auto';
-            contentDiv.style.overflowX = 'hidden';
+            // contentDiv.style.maxHeight = '8.4em'; // Controlled by CSS
+            // contentDiv.style.overflowY = 'auto';   // Controlled by CSS
+            // contentDiv.style.overflowX = 'hidden';  // Controlled by CSS
         }
         
         document.body.appendChild(tooltip);
@@ -132,26 +133,33 @@ document.addEventListener('DOMContentLoaded', function() {
         // Hide any active tooltip
         function hideActiveTooltip() {
             if (activeTooltip) {
-                activeTooltip.style.display = 'none';
+                // activeTooltip.style.display = 'none'; // Control display with CSS or by removing a class
+                activeTooltip.classList.remove('active');
                 activeTooltip = null;
             }
         }
         // Position tooltip below footnote (absolute, anchored in document)
         function positionTooltip() {
             const rect = footnote.getBoundingClientRect();
-            tooltip.style.display = 'block';
-            tooltip.style.position = 'absolute';
-            tooltip.style.left = `${rect.left + window.scrollX}px`;
+            // tooltip.style.display = 'block'; // Control display with CSS or by adding/removing a class
+            // tooltip.style.position = 'absolute'; // Controlled by CSS
+            // tooltip.style.top = `${rect.bottom + 5}px`; // This calculation might still be needed or adapted
+            // tooltip.style.zIndex = '1000'; // Controlled by CSS
+            // tooltip.style.backgroundColor = 'var(--background)'; // Controlled by CSS
+            // tooltip.style.border = 'none !important'; // Controlled by CSS
+            // tooltip.style.padding = '10px'; // Controlled by CSS
+            // tooltip.style.borderRadius = '12px'; // Controlled by CSS
+            // tooltip.style.maxWidth = '300px'; // Controlled by CSS
+            // tooltip.style.boxShadow = '0 8px 32px rgba(0,0,0,0.16), 0 1.5px 6px rgba(0,0,0,0.10)'; // Controlled by CSS
+            // tooltip.style.fontSize = '0.8em'; // Controlled by CSS
+            // tooltip.style.lineHeight = '1.4'; // Controlled by CSS
+
+            // We still need to make it visible and position it. 
+            // Let's add a class for visibility and handle positioning based on your preference.
+            tooltip.classList.add('active');
+            // Example of keeping the top positioning logic if you want it relative to the footnote:
             tooltip.style.top = `${rect.bottom + window.scrollY + 5}px`;
-            tooltip.style.zIndex = '1000';
-            tooltip.style.backgroundColor = 'var(--background)';
-            tooltip.style.border = 'none !important';
-            tooltip.style.padding = '10px';
-            tooltip.style.borderRadius = '12px';
-            tooltip.style.maxWidth = '300px';
-            tooltip.style.boxShadow = '0 8px 32px rgba(0,0,0,0.16), 0 1.5px 6px rgba(0,0,0,0.10)';
-            tooltip.style.fontSize = '0.8em';
-            tooltip.style.lineHeight = '1.4';
+             // Re-adding left for now, but can be CSS controlled
         }
         
         footnote.addEventListener('click', (e) => {
@@ -174,14 +182,16 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Close tooltip when clicking the close button
         closeButton.addEventListener('click', () => {
-            tooltip.style.display = 'none';
+            // tooltip.style.display = 'none'; // Control display with CSS or by removing a class
+            tooltip.classList.remove('active');
             activeTooltip = null;
         });
         
         // Hide tooltip when clicking outside
         document.addEventListener('click', (e) => {
             if (!footnote.contains(e.target) && !tooltip.contains(e.target)) {
-                tooltip.style.display = 'none';
+                // tooltip.style.display = 'none'; // Control display with CSS or by removing a class
+                tooltip.classList.remove('active');
                 activeTooltip = null;
             }
         });
@@ -229,7 +239,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         `;
                         preview.style.display = 'block';
                         preview.style.position = 'fixed';
-                        preview.style.left = `${rect.left}px`;
                         preview.style.top = `${rect.bottom + 5}px`;
                         preview.style.zIndex = '1000';
                         preview.style.backgroundColor = 'var(--background)';
@@ -239,7 +248,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         preview.style.maxWidth = '600px';
                         preview.style.maxHeight = '500px';
                         preview.style.overflow = 'hidden';
-                        preview.style.boxShadow = '0 2px 5px rgba(0,0,0,0.2)';
+                        preview.style.boxShadow = '0 2px 5px rgba(0,0,0,0.2), 0 1.5px 6px rgba(0,0,0,0.10)';
                         
                         // Style the scrollable content
                         const scrollable = preview.querySelector('.preview-scrollable');
@@ -331,4 +340,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 }); 
 
-setTimeout(convertObsidianLinks, 1000);
+// setTimeout(convertObsidianLinks, 1000); // Removed from global scope to fix ReferenceError

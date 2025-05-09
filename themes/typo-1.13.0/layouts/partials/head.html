@@ -32,7 +32,9 @@
 {{ partialCached "head/css.html" . }}
 {{ partialCached "head/js.html" . }}
 
+{{ if .IsPage }}
 <script src="/js/obsidian-links.js"></script>
+{{ end }}
 
 {{ if hugo.IsProduction }}
 {{ template "_internal/google_analytics.html" . }}

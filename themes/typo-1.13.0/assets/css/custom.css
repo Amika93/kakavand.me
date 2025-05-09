@@ -1,6 +1,105 @@
 /* Place custom css here */
+
+mark {
+  background-color: #f9a95e7a;
+  color: inherit;
+  border-radius: 0.2em;
+  font-style: inherit;
+  font-weight: inherit;
+}
+
+@media (prefers-color-scheme: dark) {
+  mark {
+    background-color: #ff8800cf;
+    color: inherit;
+  }
+}
+
 body {
     direction: rtl;
     text-align: right;
     font-weight: normal !important;
+}
+
+/* Custom CSS for footnote tooltips */
+
+.footnote-tooltip {
+  display: none; /* Hidden by default */
+  position: absolute; /* JS will set top/left. Change if you want full CSS positioning */
+  background-color: var(--tooltip);
+  padding: 12px 15px;
+  border-radius: 8px;
+  max-width: 320px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  font-size: 0.85em;
+  line-height: 1.5;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.footnote-tooltip.active {
+  display: block; /* Show when active class is present */
+}
+
+.footnote-tooltip .footnote-tooltip-header {
+  display: flex;
+  justify-content: right; /* Pushes button to the right */
+  align-items: center;
+  margin-bottom: 8px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--content-secondary); /* Optional: adds a separator */
+}
+
+.footnote-tooltip .footnote-tooltip-header button {
+  background: none;
+  border: none;
+  font-size: 1.4em; /* Makes the '×' a bit larger */
+  font-weight: bold;
+  line-height: 1;
+  padding: 0 0 0 10px; /* Give it some space if it's on the right */
+  cursor: pointer;
+  color: var(--content-secondary);
+}
+
+.footnote-tooltip .footnote-tooltip-header button:hover {
+  color: var(--content-primary);
+}
+
+.footnote-tooltip .footnote-content {
+  max-height: 14em; /* Adjust as needed, e.g., 5-6 lines */
+  color:var(--content-primary);
+  overflow-y: auto;
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+/* Optional: Nicer scrollbar for WebKit browsers */
+.footnote-tooltip .footnote-content::-webkit-scrollbar {
+  width: 0px;
+}
+
+.footnote-tooltip .footnote-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.footnote-tooltip .footnote-content::-webkit-scrollbar-thumb {
+  background-color: var(--content-secondary, #ccc);
+  border-radius: 3px;
+}
+
+/* Ensure KaTeX math blocks are LTR */
+.katex,
+.katex-display {
+  direction: ltr !important; /* Override inherited RTL for math */
+  text-align: center !important; /* Ensure text within math aligns left */
+}
+
+/* If KaTeX elements are too close to surrounding RTL text, add some margin */
+.katex-display {
+  margin-right: 5px; /* Adjust as needed for RTL context */
+  margin-left: 5px;  /* Adjust as needed for RTL context */
+}
+
+/* Forcing LTR direction on specific elements */
+.force-ltr {
+  direction: ltr !important;
+  text-align: left !important;
 }

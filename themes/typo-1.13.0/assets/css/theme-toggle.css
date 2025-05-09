@@ -4,6 +4,7 @@
   --dark-bg: #121212;
   --dark-content-primary: #e4e4e4;
   --dark-content-secondary: #b0b0b0;
+  --dark-tooltip:#4e4d4d ;
   --dark-code-background: #1e1e1e;
   --dark-code-border: #333333;
   --dark-link: #90caf9;
@@ -17,6 +18,7 @@
   --light-content-primary: #222222;
   --light-content-secondary: #666666;
   --light-content-dim: #a1a1a1;
+  --light-tooltip:#e9e7e7 ;
   --light-code-background: #f5f5f5;
   --light-code-border: #e0e0e0;
   --light-link: #1976d2;
@@ -32,6 +34,7 @@
   --content-primary: var(--light-content-primary);
   --content-secondary: var(--light-content-secondary);
   --content-dim: var(--light-content-dim);
+  --tooltip: var(--light-tooltip);
   --code-background: var(--light-code-background);
   --code-border: var(--light-code-border);
   --link-color: var(--light-link);
@@ -46,6 +49,7 @@
   --background: var(--dark-bg);
   --content-primary: var(--dark-content-primary);
   --content-secondary: var(--dark-content-secondary);
+  --tooltip: var(--dark-tooltip);
   --code-background: var(--dark-code-background);
   --code-border: var(--dark-code-border);
   --link-color: var(--dark-link);

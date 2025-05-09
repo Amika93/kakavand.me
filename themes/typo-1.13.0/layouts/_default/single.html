@@ -175,7 +175,7 @@
 
   {{/* --- BEGIN Regular Page Content --- */}}
   <div class="single-content">
-    {{ .Content }}
+    {{ .Content | replaceRE `==([^=]+)==` `<mark>$1</mark>` | safeHTML }}
   </div>
 
   {{/* Subscription Link */}}
