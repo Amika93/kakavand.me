@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/7powers/intro/introduction.md",
+                "file": "content/posts/Aaron Levie.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "introduction"
+              "title": "Aaron Levie"
             }
           }
         ]
@@ -178,8 +178,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "63fbe061d6538b82",
+  "active": "c9f0be510b5eb4f5",
   "lastOpenFiles": [
+    "content/media/Pasted image 20250507022910.png",
+    "content/posts/Vibe Coding.md",
+    "content/7powers/intro/introduction.md",
     "public/assets/combined.min.a99edf3ce0c7500dde8eae168d53e5333e7dcf027f5e63daa8f407888875f848.css",
     "public/assets/combined.min.522a165e8ac1f7acac19f9101b6b205487c092881c3ce8c4347bdb702c10a49c.css",
     "public/assets/combined.min.c99d6095c4d7140d905221eb5414aab4cf09ff10c065bad1a17c3d6cc55e2f97.css",
@@ -190,9 +193,7 @@
     "public/assets/combined.min.6bcbf199926f04e609b0882b63efb05a76aefa4f9dac2e121ea52578f5c6c158.css",
     "public/assets/combined.min.e35a5b6bfea7f28eb0993e6050d7df8b948c53e2b7c53816c3ae6f476b719058.css",
     "public/assets/combined.min.6dcf5736475b43bae3ab8fa57b1c2d57b53ff604f4425c61ab19451094c8b0cf.css",
-    "public/assets/combined.min.ce8aba290225f8fe28cdc81daea3c3e236b4ca75c3e6029dee8b16cde44014a8.css",
     "content/7powers/_index.md",
-    "content/7powers/intro/introduction.md",
     "content/7powers/intro/_index.md",
     "content/posts/fake.md",
     "content/7powers/part1/scale.md",
@@ -206,7 +207,6 @@
     "content/posts/Unbundling.md",
     "content/posts/Kitsch.md",
     "content/posts/Aaron Levie.md",
-    "content/media/Pasted image 20250507022910.png",
     "content/videos/Transistors.md",
     "public/media/Transistor.jpg",
     "static/media/Transistor.jpg",
@@ -221,7 +221,6 @@
     "content/posts/Jeff Bezos.md",
     "public/media/Pasted image 20250507022910.png",
     "content/posts/‌Bits Atoms Strategy.md",
-    "content/posts/PG.md",
     "static/media/Because-...-1024x682.jpg",
     "static/media/Beefweet.jpg",
     "static/media/Big-Piece-of-ST-1024x682.jpg",
