@@ -33,11 +33,17 @@ body {
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
   font-size: 0.85em;
   line-height: 1.5;
+  font-weight: 300 !important;
   z-index: 1000; /* Ensure it's above other content */
 }
 
 .footnote-tooltip.active {
   display: block; /* Show when active class is present */
+}
+
+.footnote-ref {
+  background-color: var(--tooltip);
+  padding: 0 4px;
 }
 
 .footnote-tooltip .footnote-tooltip-header {
