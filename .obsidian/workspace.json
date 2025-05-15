@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/Aaron Levie.md",
+                "file": "content/about.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Aaron Levie"
+              "title": "about"
             }
           }
         ]
@@ -178,22 +178,23 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "63fbe061d6538b82",
+  "active": "c9f0be510b5eb4f5",
   "lastOpenFiles": [
-    "public/assets/combined.min.4018692e89ab77b3fdff2cbd27fa1f8f0331af229bdfdd92971c294118191507.css",
-    "public/assets/combined.min.5a30497fa78aac651bc94c06e843431e7f48a94b5514695d8376a3c6b9d7a114.css",
-    "public/assets/combined.min.6cf1354c05658dfc15a40103d6014c3fca9a62c7503d842bf0fa10e0233c2d5e.css",
-    "public/assets/combined.min.d68313224f92653fddc1bf9cbdac5b81d25e2ac4cb5f26b4317d440ec923083d.css",
-    "public/assets/combined.min.6d2620cd1e8b499e7169b8d33e181052a293dae461a9f51166b89e2a7285d893.css",
-    "public/assets/combined.min.df4aac8e153605b3e194bc7f820968d7a855543266e6f59aea3fb4aa55760487.css",
-    "public/assets/combined.min.4b61ea86db92bb4d33232a62fedf8874c45492c360fd59c7557f2e4805297880.css",
-    "public/assets/combined.min.4ad4a33838ef96b189c859f581f836110c2c0ac9d54f0191efd9b78e0ca5d4b4.css",
+    "public/assets/combined.min.7f7aa32ea69a680ee1014f7971d472e5c03584d5494e183cedef8d0a4f4caece.css",
+    "content/7powers/intro/introduction.md",
+    "public/assets/combined.min.9f8b7d8e6956dcfeb7da16e46a292afa00a90d58a95d29b0192c307e791358e2.css",
+    "public/assets/combined.min.059e0401813cecb07af30733193ab3c0dca3e067fe58e1f5f0ae78a5c07ead76.css",
+    "public/assets/combined.min.cede0b0861accb29d5388ad2587dbb799f98f4d1c60e743a3da2850743cad5bc.css",
+    "public/assets/combined.min.caba0b21cef3f0761c4613851be21fbb324a333de14699ef89aa9f32d8d03512.css",
+    "public/assets/combined.min.4c0ad954a857a96230bcae8d6940aa9ff9bfdbb946ae60f554baaed52fcc84c3.css",
+    "public/assets/combined.min.9d0a23c59d3370349dbc8e63dfea1e1e22cebfe15b6a7b2381e98e2be7b4418e.css",
+    "content/posts/Aaron Levie.md",
+    "public/assets/combined.min.dba80f42ae638e4002a85f17a279aa0c83d1bf17af64b03efe1b664e13058026.css",
+    "public/assets/combined.min.541391fda760082502838591112fffb463ac5b238660c80a7dfe6c2c9124eb2b.css",
+    "public/assets/combined.min.bc931428fd45fb5580c4ca62af3a6db006c2f8889ac471093c42eb37fa3cea24.css",
+    "public/assets/combined.min.bca888fa94744173802920afd4a688bdb6cb6022d51cdad4726d1de0e9449fa3.css",
     "content/media/Pasted image 20250507022910.png",
     "content/posts/Vibe Coding.md",
-    "content/7powers/intro/introduction.md",
-    "public/assets/combined.min.a99edf3ce0c7500dde8eae168d53e5333e7dcf027f5e63daa8f407888875f848.css",
-    "public/assets/combined.min.522a165e8ac1f7acac19f9101b6b205487c092881c3ce8c4347bdb702c10a49c.css",
-    "public/assets/combined.min.c99d6095c4d7140d905221eb5414aab4cf09ff10c065bad1a17c3d6cc55e2f97.css",
     "content/7powers/_index.md",
     "content/7powers/intro/_index.md",
     "content/posts/fake.md",
@@ -207,7 +208,6 @@
     "static/media/Amin.jpg",
     "content/posts/Unbundling.md",
     "content/posts/Kitsch.md",
-    "content/posts/Aaron Levie.md",
     "content/videos/Transistors.md",
     "public/media/Transistor.jpg",
     "static/media/Transistor.jpg",

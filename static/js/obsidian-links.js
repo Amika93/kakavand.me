@@ -141,25 +141,27 @@ document.addEventListener('DOMContentLoaded', function() {
         // Position tooltip below footnote (absolute, anchored in document)
         function positionTooltip() {
             const rect = footnote.getBoundingClientRect();
-            // tooltip.style.display = 'block'; // Control display with CSS or by adding/removing a class
-            // tooltip.style.position = 'absolute'; // Controlled by CSS
-            // tooltip.style.top = `${rect.bottom + 5}px`; // This calculation might still be needed or adapted
-            // tooltip.style.zIndex = '1000'; // Controlled by CSS
-            // tooltip.style.backgroundColor = 'var(--background)'; // Controlled by CSS
-            // tooltip.style.border = 'none !important'; // Controlled by CSS
-            // tooltip.style.padding = '10px'; // Controlled by CSS
-            // tooltip.style.borderRadius = '12px'; // Controlled by CSS
-            // tooltip.style.maxWidth = '300px'; // Controlled by CSS
-            // tooltip.style.boxShadow = '0 8px 32px rgba(0,0,0,0.16), 0 1.5px 6px rgba(0,0,0,0.10)'; // Controlled by CSS
-            // tooltip.style.fontSize = '0.8em'; // Controlled by CSS
-            // tooltip.style.lineHeight = '1.4'; // Controlled by CSS
+            
+            tooltip.classList.add('active'); // Make it visible via CSS
 
-            // We still need to make it visible and position it. 
-            // Let's add a class for visibility and handle positioning based on your preference.
-            tooltip.classList.add('active');
-            // Example of keeping the top positioning logic if you want it relative to the footnote:
+            // Vertical position: below the footnote reference
             tooltip.style.top = `${rect.bottom + window.scrollY + 5}px`;
-             // Re-adding left for now, but can be CSS controlled
+
+            // Horizontal position: align the tooltip's left edge with the reference's left edge
+            let calculatedLeft = rect.left + window.scrollX;
+
+            // Prevent tooltip from overflowing the right edge of the viewport
+            const viewportWidth = document.documentElement.clientWidth;
+            const maxLeft = (viewportWidth + window.scrollX) - tooltip.offsetWidth - 5; // 5px padding
+            if (calculatedLeft > maxLeft) {
+                calculatedLeft = maxLeft;
+            }
+            // Prevent tooltip from overflowing the left edge
+            if (calculatedLeft < window.scrollX + 5) {
+                calculatedLeft = window.scrollX + 5;
+            }
+
+            tooltip.style.left = `${calculatedLeft}px`;
         }
         
         footnote.addEventListener('click', (e) => {

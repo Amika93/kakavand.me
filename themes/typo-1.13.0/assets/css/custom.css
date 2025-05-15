@@ -46,6 +46,18 @@ body {
   padding: 0 4px;
 }
 
+.line-summary {
+  font-weight: 300 !important;
+}
+
+.single-summary {
+  font-weight: 300 !important;
+}
+
+.single-readtime {
+  font-weight: 300 !important;
+}
+
 .footnote-tooltip .footnote-tooltip-header {
   display: flex;
   justify-content: right; /* Pushes button to the right */

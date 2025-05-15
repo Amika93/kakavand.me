@@ -54,7 +54,7 @@ ul {
 
 li {
   margin-left: var(--li-indent);
-  font-size: medium;
+  font-size: .95em !important;
   margin-right: var(--li-indent);
 }
 
@@ -616,4 +616,9 @@ blockquote {
 blockquote p {
   margin-left: 1rem;
   margin-right: 1rem;
+  font-weight: 300;
+}
+
+blockquote p strong {
+  font-weight: 600;
 }
