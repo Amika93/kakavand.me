@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "8dcfb8f45f8671d7",
+        "id": "e7f5b3ced3c3f5a9",
         "type": "tabs",
         "children": [
           {
-            "id": "c9f0be510b5eb4f5",
+            "id": "8750685a3259d011",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/about.md",
+                "file": "content/posts/Vibe Coding.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "about"
+              "title": "Vibe Coding"
             }
           }
         ]
@@ -178,8 +178,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c9f0be510b5eb4f5",
+  "active": "8750685a3259d011",
   "lastOpenFiles": [
+    "static/media/academy-dilemma.png",
+    "content/posts/Vibe Coding.md",
+    "content/posts/Thaw.md",
+    "media.md",
+    "content/media/Pasted image 20250507022910.png",
+    "static/media/Vibe-karpathy.png",
+    "content/about.md",
     "public/assets/combined.min.7f7aa32ea69a680ee1014f7971d472e5c03584d5494e183cedef8d0a4f4caece.css",
     "content/7powers/intro/introduction.md",
     "public/assets/combined.min.9f8b7d8e6956dcfeb7da16e46a292afa00a90d58a95d29b0192c307e791358e2.css",
@@ -192,14 +199,10 @@
     "public/assets/combined.min.dba80f42ae638e4002a85f17a279aa0c83d1bf17af64b03efe1b664e13058026.css",
     "public/assets/combined.min.541391fda760082502838591112fffb463ac5b238660c80a7dfe6c2c9124eb2b.css",
     "public/assets/combined.min.bc931428fd45fb5580c4ca62af3a6db006c2f8889ac471093c42eb37fa3cea24.css",
-    "public/assets/combined.min.bca888fa94744173802920afd4a688bdb6cb6022d51cdad4726d1de0e9449fa3.css",
-    "content/media/Pasted image 20250507022910.png",
-    "content/posts/Vibe Coding.md",
     "content/7powers/_index.md",
     "content/7powers/intro/_index.md",
     "content/posts/fake.md",
     "content/7powers/part1/scale.md",
-    "content/about.md",
     "content/7powers/part2/_index.md",
     "content/7powers/part1/_index.md",
     "public/media/Amin.jpg",
@@ -219,12 +222,8 @@
     "content/posts/Patrick Collison.md",
     "content/posts/Netflix.md",
     "content/posts/Reed Hastings.md",
-    "content/posts/Jeff Bezos.md",
     "public/media/Pasted image 20250507022910.png",
-    "content/posts/‌Bits Atoms Strategy.md",
     "static/media/Because-...-1024x682.jpg",
-    "static/media/Beefweet.jpg",
-    "static/media/Big-Piece-of-ST-1024x682.jpg",
-    "static/media/Bloomberg-Terminal.jpg"
+    "static/media/Beefweet.jpg"
   ]
 }
