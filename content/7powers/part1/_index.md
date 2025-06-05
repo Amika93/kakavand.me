@@ -2,5 +2,5 @@
 title: "بخش اول: قسمت ایستای استراتژی"
 date: 2025-05-08T17:35:36+03:30
 weight: 20
-draft: "true"
+draft: "false"
 ---

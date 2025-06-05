@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/7powers/part1/scale.md",
+                "file": "content/7powers/part1/_index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "scale"
+              "title": "_index"
             }
           }
         ],
@@ -195,8 +195,8 @@
   },
   "active": "aa2bb56275524fc2",
   "lastOpenFiles": [
-    "content/posts/Aaron Levie.md",
     "content/7powers/part1/scale.md",
+    "content/posts/Aaron Levie.md",
     "static/media/7P-1-4.png",
     "static/media/7P-1-3.png",
     "static/media/7P-1-2.png",
