@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/7powers/part1/_index.md",
+                "file": "content/7powers/part1/scale.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "_index"
+              "title": "scale"
             }
           }
         ],
@@ -195,6 +195,9 @@
   },
   "active": "aa2bb56275524fc2",
   "lastOpenFiles": [
+    "content/7powers/part1/_index.md",
+    "content/7powers/part2/_index.md",
+    "content/7powers/_index.md",
     "content/7powers/part1/scale.md",
     "content/posts/Aaron Levie.md",
     "static/media/7P-1-4.png",
@@ -221,11 +224,8 @@
     "public/assets/combined.min.dba80f42ae638e4002a85f17a279aa0c83d1bf17af64b03efe1b664e13058026.css",
     "public/assets/combined.min.541391fda760082502838591112fffb463ac5b238660c80a7dfe6c2c9124eb2b.css",
     "public/assets/combined.min.bc931428fd45fb5580c4ca62af3a6db006c2f8889ac471093c42eb37fa3cea24.css",
-    "content/7powers/_index.md",
     "content/7powers/intro/_index.md",
     "content/posts/fake.md",
-    "content/7powers/part2/_index.md",
-    "content/7powers/part1/_index.md",
     "public/media/Amin.jpg",
     "content/subscribe.md",
     "content/posts/Disrupt.md",
