@@ -585,7 +585,7 @@ table {
 th,
 td {
   padding: var(--table-cell-padding);
-  text-align: center;
+  text-align: center !important;
 }
 
 th {
