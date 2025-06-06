@@ -50,12 +50,12 @@ p {
 ul {
   margin-top: var(--ul-margin-top);
   margin-bottom: var(--ul-margin-bottom);
+  margin-right: var(--ul-margin-right);
 }
 
 li {
   margin-left: var(--li-indent);
   font-size: .95em !important;
-  margin-right: var(--li-indent);
 }
 
 /* Basic link styling without underlines */
