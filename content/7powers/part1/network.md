@@ -85,6 +85,10 @@ $$SLM = 1-\dfrac{1}{[1+δ(N_S-N_W)]}$$
 |                     |                             |                                    |
 |                     |                             |                                    |
 
+
+برای با خبر شدن از پست‌های جدید [سابسکرایب](https://kakavand.me/subscribe/) کنید.
+
+
 [^1]: BranchOut
 
 [^2]: LinkedIn
