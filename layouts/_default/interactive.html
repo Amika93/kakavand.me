@@ -1,0 +1,19 @@
+{{ define "main" }}
+
+{{ with resources.Get "css/interactive.css" }}
+{{ $css := . | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" media="all">
+{{ end }}
+
+<div class="ip-progress" aria-hidden="true"><span></span></div>
+
+<article class="ip-post single-content">
+  {{ .Content }}
+</article>
+
+{{ with resources.Get "js/interactive.js" }}
+{{ $js := . | js.Build (dict "minify" true) | fingerprint }}
+<script src="{{ $js.RelPermalink }}" defer></script>
+{{ end }}
+
+{{ end }}

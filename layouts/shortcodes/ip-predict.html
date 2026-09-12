@@ -1,0 +1,16 @@
+{{- $name := default "default" (.Get "name") -}}
+<section class="ip-predict" data-predict="{{ $name }}" id="{{ default "predict" (.Get "anchor") }}">
+  <p class="ip-predict-eyebrow">{{ default "حدس خودت رو ثبت کن" (.Get "eyebrow") }}</p>
+  <p class="ip-predict-q">{{ .Get "question" }}</p>
+  <div class="ip-options" role="group">
+    {{- range split (trim .Inner "\n ") "\n" -}}
+      {{- $p := split . "::" -}}
+      {{- if eq (len $p) 3 -}}
+        <button type="button" class="ip-option" aria-pressed="false"
+          data-option="{{ trim (index $p 0) " " }}"
+          data-short="{{ trim (index $p 2) " " }}">{{ trim (index $p 1) " " }}</button>
+      {{- end -}}
+    {{- end -}}
+  </div>
+  <p class="ip-predict-ack" hidden>{{ default "ثبت شد. انتهای نوشته برمی‌گردیم سر همین حدس." (.Get "ack") }}</p>
+</section>

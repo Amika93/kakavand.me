@@ -1,0 +1,5 @@
+<article class="ip-scenario" data-kind="{{ default "what-if" (.Get "kind") }}">
+  {{ with .Get "tag" }}<span class="ip-scenario-tag">{{ . }}</span>{{ end }}
+  <h3 class="ip-scenario-title">{{ .Get "title" }}</h3>
+  <div class="ip-scenario-body">{{ .Inner | markdownify }}</div>
+</article>

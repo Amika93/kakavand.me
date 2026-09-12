@@ -1,0 +1,13 @@
+<section class="ip-finding" {{ with .Get "anchor" }}id="{{ . }}"{{ end }}>
+  <p class="ip-finding-n">{{ default "یافته" (.Get "kicker") }} {{ .Get "n" }}</p>
+  <h2 class="ip-finding-title">{{ .Get "title" }}</h2>
+  <div class="ip-finding-body">
+    {{- if eq (.Get "chartPos") "before" -}}
+      {{- partial "ip-chart.html" (dict "id" (.Get "chart") "set" (.Get "set")) -}}
+    {{- end -}}
+    {{ .Inner | markdownify }}
+    {{- if and (.Get "chart") (ne (.Get "chartPos") "before") -}}
+      {{- partial "ip-chart.html" (dict "id" (.Get "chart") "set" (.Get "set")) -}}
+    {{- end -}}
+  </div>
+</section>

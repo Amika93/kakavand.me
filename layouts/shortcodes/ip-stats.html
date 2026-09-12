@@ -1,0 +1,11 @@
+<div class="ip-stats">
+  {{- range split (trim .Inner "\n ") "\n" -}}
+    {{- $p := split . "::" -}}
+    {{- if eq (len $p) 2 -}}
+      <div class="ip-stat">
+        <p class="ip-stat-value">{{ trim (index $p 0) " " }}</p>
+        <p class="ip-stat-label">{{ trim (index $p 1) " " }}</p>
+      </div>
+    {{- end -}}
+  {{- end -}}
+</div>

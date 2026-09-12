@@ -1,0 +1,4 @@
+<section class="ip-sources" {{ with .Get "anchor" }}id="{{ . }}"{{ end }}>
+  <h2>{{ default "منابع و اعداد" (.Get "title") }}</h2>
+  {{ .Inner | markdownify }}
+</section>

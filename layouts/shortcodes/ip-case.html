@@ -1,0 +1,5 @@
+{{- if eq (.Get "fallback") "true" -}}
+<div data-fallback>{{ .Inner | markdownify }}</div>
+{{- else -}}
+<div data-option="{{ .Get "option" }}" hidden>{{ .Inner | markdownify }}</div>
+{{- end -}}

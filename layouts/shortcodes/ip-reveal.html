@@ -1,0 +1,5 @@
+<div class="ip-reveal">
+  <p class="ip-reveal-prompt">{{ .Get "prompt" }}</p>
+  <button type="button" class="ip-reveal-btn" aria-expanded="false">{{ default "نشانم بده" (.Get "button") }}</button>
+  <div class="ip-reveal-body" hidden>{{ .Inner | markdownify }}</div>
+</div>

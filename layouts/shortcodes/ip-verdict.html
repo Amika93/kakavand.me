@@ -1,0 +1,5 @@
+<div class="ip-verdict" data-predict="{{ default "default" (.Get "name") }}">
+  <p class="ip-verdict-label">{{ default "حدس تو" (.Get "label") }}</p>
+  <p class="ip-verdict-choice" hidden>انتخاب تو: «<span data-choice-label></span>»</p>
+  {{ .Inner }}
+</div>

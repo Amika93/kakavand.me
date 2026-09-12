@@ -1,0 +1,24 @@
+{{- /* Renders a figure + inline-SVG chart host fed by a JSON spec.
+       Call with: (dict "id" "revenue" "set" "kodak" "bare" false) */ -}}
+{{- $id := .id -}}
+{{- $set := default "kodak" .set -}}
+{{- $all := index site.Data $set -}}
+{{- $c := index (default dict $all.charts) $id -}}
+{{- if not $c -}}
+  {{- warnf "ip-chart: no chart %q in data/%s.yaml" $id $set -}}
+{{- else -}}
+<figure class="ip-figure" {{ with $c.anchor }}id="{{ . }}"{{ end }}>
+  {{ with $c.title }}<p class="ip-figure-title">{{ . | markdownify }}</p>{{ end }}
+  {{ with $c.sub }}<p class="ip-figure-sub">{{ . | markdownify }}</p>{{ end }}
+  <div class="ip-chart" data-chart-id="{{ $id }}"></div>
+  <script type="application/json" id="ip-data-{{ $id }}">{{ $c.spec | jsonify | safeJS }}</script>
+  {{- with $c.legend }}
+  <div class="ip-legend">
+    {{- range . }}<span style="color:{{ .color | safeCSS }}"><i></i>{{ .label }}</span>{{ end -}}
+  </div>
+  {{- end }}
+  {{- if not .bare }}
+  {{ with $c.note }}<p class="ip-figure-note">{{ . | markdownify }}</p>{{ end }}
+  {{- end }}
+</figure>
+{{- end -}}

@@ -1,0 +1,9 @@
+{{- $lines := split (trim .Inner "\n ") "\n" -}}
+<nav class="ip-jump" aria-label="پرش به بخش‌ها">
+  {{- range $lines -}}
+    {{- $parts := split . "::" -}}
+    {{- if eq (len $parts) 2 -}}
+      <a href="{{ trim (index $parts 1) " " }}">{{ trim (index $parts 0) " " }}</a>
+    {{- end -}}
+  {{- end -}}
+</nav>

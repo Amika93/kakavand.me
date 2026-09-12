@@ -1,0 +1,661 @@
+/* ==========================================================================
+   Interactive long-form post components
+   Used by layouts/_default/interactive.html
+   Scoped under .ip-post so nothing leaks into ordinary posts.
+   ========================================================================== */
+
+.ip-post {
+  --ip-accent: #b8860b;
+  --ip-accent-soft: rgba(184, 134, 11, .14);
+  --ip-accent-2: #b3332b;
+  --ip-accent-2-soft: rgba(179, 51, 43, .12);
+  --ip-accent-3: #2f6f7d;
+  --ip-line: rgba(128, 128, 128, .28);
+  --ip-line-strong: rgba(128, 128, 128, .5);
+  --ip-surface: rgba(128, 128, 128, .06);
+  --ip-surface-2: rgba(128, 128, 128, .11);
+  --ip-radius: 14px;
+  --ip-step: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+:root[data-theme="dark"] .ip-post {
+  --ip-accent: #e8b84b;
+  --ip-accent-soft: rgba(232, 184, 75, .16);
+  --ip-accent-2: #e2685e;
+  --ip-accent-2-soft: rgba(226, 104, 94, .14);
+  --ip-accent-3: #6fb3c2;
+  --ip-line: rgba(170, 170, 170, .24);
+  --ip-line-strong: rgba(190, 190, 190, .42);
+  --ip-surface: rgba(190, 190, 190, .07);
+  --ip-surface-2: rgba(190, 190, 190, .12);
+}
+
+html { scroll-padding-top: 2rem; }
+
+/* ---------- width escape hatch ------------------------------------------ */
+
+.ip-wide { margin-inline: 0; }
+
+@media (min-width: 1000px) {
+  .ip-wide { margin-inline: -165px; }
+}
+
+@media (min-width: 1280px) {
+  .ip-wide { margin-inline: -255px; }
+}
+
+/* ---------- reading progress -------------------------------------------- */
+
+.ip-progress {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
+  height: 3px;
+  background: transparent;
+  z-index: 90;
+  pointer-events: none;
+}
+
+.ip-progress span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--ip-accent);
+  transform-origin: right center;
+}
+
+/* ---------- hero -------------------------------------------------------- */
+
+.ip-hero {
+  margin-block: 1rem 3.5rem;
+  padding-block-end: 2.5rem;
+  border-block-end: 1px solid var(--ip-line);
+}
+
+.ip-hero-eyebrow {
+  font-size: .8em;
+  letter-spacing: .04em;
+  color: var(--content-secondary);
+  margin-block-end: .9rem;
+}
+
+.ip-hero h1.ip-hero-title {
+  font-size: clamp(2em, 6vw, 3.1em);
+  line-height: 1.22;
+  margin-block: 0 1.1rem;
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+.ip-hero-lede {
+  font-size: 1.12em;
+  line-height: 1.85;
+  color: var(--content-primary);
+  margin-block-end: 1.6rem;
+}
+
+.ip-hero-lede strong { font-weight: 700; }
+
+.ip-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  margin-block-start: 1.6rem;
+}
+
+.ip-jump a {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .5rem 1rem;
+  border: 1px solid var(--ip-line-strong);
+  border-radius: 999px;
+  font-size: .9em;
+  text-decoration: none;
+  color: var(--content-primary);
+  transition: background-color .18s ease, border-color .18s ease;
+}
+
+.ip-jump a:hover {
+  background: var(--ip-surface-2);
+  border-color: var(--ip-accent);
+}
+
+/* ---------- section headers --------------------------------------------- */
+
+.ip-post h2 {
+  font-size: clamp(1.5em, 4.2vw, 1.95em);
+  line-height: 1.35;
+  margin-block: 3.2rem 1.2rem;
+  text-wrap: balance;
+}
+
+.ip-post h3 {
+  font-size: 1.22em;
+  margin-block: 2.2rem .8rem;
+}
+
+.ip-post p { line-height: 1.85; }
+
+/* ---------- scrollytelling --------------------------------------------- */
+
+.ip-scrolly {
+  display: grid;
+  gap: 1.5rem;
+  margin-block: 2.5rem 3.5rem;
+}
+
+.ip-scrolly-sticky {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 5;
+  background: var(--background);
+  padding-block: .75rem;
+  margin-block-end: .5rem;
+}
+
+.ip-scrolly-caption {
+  font-size: .88em;
+  color: var(--content-secondary);
+  margin-block: .6rem 0;
+  min-height: 2.8em;
+  line-height: 1.6;
+}
+
+.ip-scrolly-steps {
+  display: flex;
+  flex-direction: column;
+}
+
+.ip-step {
+  padding-block: 1.2rem;
+  opacity: .42;
+  transition: opacity .35s ease;
+}
+
+.ip-step.is-active { opacity: 1; }
+
+.ip-step:first-child { padding-block-start: 0; }
+
+.ip-step-year {
+  font-size: .82em;
+  font-weight: 700;
+  color: var(--ip-accent);
+  letter-spacing: .03em;
+  margin-block-end: .35rem;
+}
+
+.ip-step p { margin-block: 0 .7rem; }
+.ip-step p:last-child { margin-block-end: 0; }
+
+@media (min-width: 860px) {
+  .ip-scrolly {
+    grid-template-columns: 1fr 1.05fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  .ip-scrolly-sticky {
+    grid-column: 2;
+    grid-row: 1;
+    inset-block-start: 3.5rem;
+    padding-block: 0;
+    margin-block-end: 0;
+  }
+  .ip-scrolly-steps {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .ip-step { padding-block: 3.5rem; }
+  .ip-step:first-child { padding-block-start: 1rem; }
+  .ip-step:last-child { padding-block-end: 6rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ip-step { opacity: 1; }
+}
+
+/* ---------- charts ------------------------------------------------------ */
+
+.ip-figure {
+  margin-block: 2.2rem;
+}
+
+.ip-figure-title {
+  font-size: 1em;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-block: 0 .25rem;
+}
+
+.ip-figure-sub {
+  font-size: .85em;
+  color: var(--content-secondary);
+  margin-block: 0 .9rem;
+  line-height: 1.6;
+}
+
+.ip-figure-note {
+  font-size: .78em;
+  color: var(--content-secondary);
+  margin-block-start: .7rem;
+  line-height: 1.65;
+}
+
+.ip-chart { width: 100%; }
+
+.ip-chart svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+.ip-grid-line { stroke: var(--ip-line); stroke-width: 1; }
+.ip-axis-line { stroke: var(--ip-line-strong); stroke-width: 1; }
+
+.ip-tick {
+  font-size: 13px;
+  fill: var(--content-secondary);
+}
+
+.ip-series-line {
+  fill: none;
+  stroke: var(--ip-line-strong);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.ip-series-area { fill: var(--ip-surface); }
+
+.ip-series-hl {
+  fill: none;
+  stroke: var(--ip-accent);
+  stroke-width: 3.2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.ip-series-hl-area { fill: var(--ip-accent-soft); }
+
+.ip-dot { fill: var(--ip-accent); }
+
+.ip-bar { fill: var(--ip-surface-2); }
+.ip-bar.is-hl { fill: var(--ip-accent); }
+.ip-bar.is-alt { fill: var(--ip-accent-2); }
+
+.ip-bar-label {
+  font-size: 13px;
+  fill: var(--content-secondary);
+}
+
+.ip-value-label {
+  font-size: 13px;
+  font-weight: 700;
+  fill: var(--content-primary);
+}
+
+.ip-anno-line {
+  stroke: var(--ip-line-strong);
+  stroke-width: 1;
+  stroke-dasharray: 3 3;
+}
+
+.ip-anno-text {
+  font-size: 12.5px;
+  fill: var(--content-secondary);
+}
+
+.ip-anno-text.is-strong {
+  fill: var(--content-primary);
+  font-weight: 700;
+}
+
+.ip-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3rem 1.1rem;
+  font-size: .82em;
+  color: var(--content-secondary);
+  margin-block-start: .7rem;
+}
+
+.ip-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+}
+
+.ip-legend i {
+  width: .75rem;
+  height: .75rem;
+  border-radius: 3px;
+  background: currentColor;
+  display: inline-block;
+}
+
+/* animated reveal */
+.ip-chart[data-anim="pending"] .ip-series-line,
+.ip-chart[data-anim="pending"] .ip-series-hl {
+  stroke-dashoffset: var(--ip-len);
+}
+
+.ip-chart[data-anim="run"] .ip-series-line,
+.ip-chart[data-anim="run"] .ip-series-hl {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1.5s cubic-bezier(.22, .61, .36, 1);
+}
+
+.ip-chart[data-anim="pending"] .ip-bar { transform: scaleY(0); }
+
+.ip-chart[data-anim="run"] .ip-bar {
+  transform: scaleY(1);
+  transition: transform .85s cubic-bezier(.22, .61, .36, 1);
+}
+
+.ip-bar { transform-origin: bottom; transform-box: fill-box; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ip-chart[data-anim] .ip-series-line,
+  .ip-chart[data-anim] .ip-series-hl { stroke-dashoffset: 0; transition: none; }
+  .ip-chart[data-anim] .ip-bar { transform: scaleY(1); transition: none; }
+}
+
+/* ---------- reveal card ------------------------------------------------- */
+
+.ip-reveal {
+  border: 1px solid var(--ip-line-strong);
+  border-radius: var(--ip-radius);
+  padding: clamp(1.25rem, 4vw, 2rem);
+  margin-block: 2.5rem;
+  background: var(--ip-surface);
+}
+
+.ip-reveal-prompt {
+  font-size: 1.1em;
+  font-weight: 700;
+  line-height: 1.6;
+  margin-block: 0 1rem;
+}
+
+.ip-reveal-btn {
+  font-family: inherit;
+  font-size: .95em;
+  padding: .6rem 1.3rem;
+  border: 1px solid var(--ip-accent);
+  background: transparent;
+  color: var(--content-primary);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color .18s ease;
+}
+
+.ip-reveal-btn:hover { background: var(--ip-accent-soft); }
+
+.ip-reveal-body {
+  margin-block-start: 1.2rem;
+  line-height: 1.85;
+}
+
+.ip-reveal-body[hidden] { display: none !important; }
+
+.ip-reveal-body > :first-child { margin-block-start: 0; }
+.ip-reveal-body > :last-child { margin-block-end: 0; }
+
+.ip-reveal.is-open .ip-reveal-btn { display: none; }
+
+/* ---------- prediction widget ------------------------------------------ */
+
+.ip-predict {
+  border: 1px solid var(--ip-accent);
+  border-radius: var(--ip-radius);
+  padding: clamp(1.25rem, 4vw, 2rem);
+  margin-block: 3rem;
+  background: var(--ip-accent-soft);
+}
+
+.ip-predict-eyebrow {
+  font-size: .78em;
+  letter-spacing: .05em;
+  color: var(--content-secondary);
+  margin-block: 0 .6rem;
+}
+
+.ip-predict-q {
+  font-size: 1.15em;
+  font-weight: 700;
+  line-height: 1.6;
+  margin-block: 0 1.2rem;
+}
+
+.ip-options {
+  display: grid;
+  gap: .6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ip-option {
+  display: block;
+  width: 100%;
+  text-align: start;
+  font-family: inherit;
+  font-size: .97em;
+  line-height: 1.65;
+  padding: .85rem 1.1rem;
+  border: 1px solid var(--ip-line-strong);
+  border-radius: 10px;
+  background: var(--background);
+  color: var(--content-primary);
+  cursor: pointer;
+  transition: border-color .18s ease, background-color .18s ease, transform .18s ease;
+}
+
+.ip-option:hover {
+  border-color: var(--ip-accent);
+  transform: translateY(-1px);
+}
+
+.ip-option[aria-pressed="true"] {
+  border-color: var(--ip-accent);
+  border-width: 2px;
+  background: var(--ip-accent-soft);
+  font-weight: 700;
+}
+
+.ip-predict-ack {
+  font-size: .92em;
+  line-height: 1.75;
+  color: var(--content-secondary);
+  margin-block: 1.1rem 0;
+}
+
+.ip-predict-ack[hidden] { display: none !important; }
+
+/* result block */
+
+.ip-verdict {
+  border-inline-start: 3px solid var(--ip-accent);
+  padding: 1.1rem 1.3rem;
+  background: var(--ip-surface);
+  border-radius: 0 var(--ip-radius) var(--ip-radius) 0;
+  margin-block: 2rem;
+  line-height: 1.8;
+}
+
+.ip-verdict-label {
+  font-size: .78em;
+  letter-spacing: .05em;
+  color: var(--content-secondary);
+  margin-block: 0 .45rem;
+}
+
+.ip-verdict-choice {
+  font-weight: 700;
+  margin-block: 0 .6rem;
+}
+
+.ip-verdict p:last-child { margin-block-end: 0; }
+
+/* ---------- findings ---------------------------------------------------- */
+
+.ip-finding {
+  margin-block: 3.5rem;
+  padding-block-start: 1.6rem;
+  border-block-start: 1px solid var(--ip-line);
+}
+
+.ip-finding-n {
+  font-size: .8em;
+  font-weight: 700;
+  letter-spacing: .05em;
+  color: var(--ip-accent);
+  margin-block: 0 .5rem;
+}
+
+.ip-finding-title {
+  font-size: clamp(1.3em, 3.6vw, 1.6em);
+  line-height: 1.4;
+  font-weight: 700;
+  margin-block: 0 1rem;
+  text-wrap: balance;
+}
+
+.ip-finding-body { line-height: 1.85; }
+.ip-finding-body > :first-child { margin-block-start: 0; }
+
+/* ---------- scenario cards --------------------------------------------- */
+
+.ip-scenarios {
+  display: grid;
+  gap: 1.1rem;
+  margin-block: 2.5rem;
+}
+
+@media (min-width: 900px) {
+  .ip-scenarios { grid-template-columns: repeat(3, 1fr); }
+}
+
+.ip-scenario {
+  border: 1px solid var(--ip-line-strong);
+  border-radius: var(--ip-radius);
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  background: var(--ip-surface);
+}
+
+.ip-scenario-tag {
+  font-size: .74em;
+  letter-spacing: .04em;
+  display: inline-block;
+  align-self: flex-start;
+  padding: .22rem .6rem;
+  border-radius: 999px;
+  background: var(--ip-surface-2);
+  color: var(--content-secondary);
+  margin-block-end: .8rem;
+}
+
+.ip-scenario[data-kind="real"] { border-color: var(--ip-accent); }
+.ip-scenario[data-kind="real"] .ip-scenario-tag {
+  background: var(--ip-accent-soft);
+  color: var(--ip-accent);
+  font-weight: 700;
+}
+
+.ip-scenario-title {
+  font-size: 1.1em;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-block: 0 .6rem;
+}
+
+.ip-scenario-body {
+  font-size: .93em;
+  line-height: 1.75;
+  color: var(--content-primary);
+}
+
+.ip-scenario-body > :first-child { margin-block-start: 0; }
+.ip-scenario-body > :last-child { margin-block-end: 0; }
+
+/* ---------- stat row --------------------------------------------------- */
+
+.ip-stats {
+  display: grid;
+  gap: 1rem;
+  margin-block: 2.2rem;
+}
+
+@media (min-width: 680px) {
+  .ip-stats { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+}
+
+.ip-stat {
+  border-block-start: 2px solid var(--ip-accent);
+  padding-block-start: .7rem;
+}
+
+.ip-stat-value {
+  font-size: clamp(1.6em, 5vw, 2.1em);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-block: 0 .3rem;
+}
+
+.ip-stat-label {
+  font-size: .85em;
+  color: var(--content-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ---------- pull quote ------------------------------------------------- */
+
+.ip-pull {
+  font-size: clamp(1.2em, 3.6vw, 1.5em);
+  line-height: 1.6;
+  font-weight: 700;
+  margin-block: 2.8rem;
+  padding-inline-start: 1.1rem;
+  border-inline-start: 3px solid var(--ip-accent-2);
+  text-wrap: balance;
+}
+
+/* ---------- sources ---------------------------------------------------- */
+
+.ip-sources {
+  margin-block-start: 4rem;
+  padding-block-start: 1.6rem;
+  border-block-start: 1px solid var(--ip-line);
+  font-size: .88em;
+}
+
+.ip-sources h2 { font-size: 1.2em; margin-block: 0 1rem; }
+
+.ip-sources ol { margin: 0; padding-inline-start: 1.3rem; }
+.ip-sources li { margin-block-end: .55rem; line-height: 1.7; }
+
+.ip-table-wrap { overflow-x: auto; margin-block: 1.2rem; }
+
+.ip-sources table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .95em;
+}
+
+.ip-sources th,
+.ip-sources td {
+  padding: .5rem .6rem;
+  border-block-end: 1px solid var(--ip-line);
+  text-align: start;
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+.ip-sources th { font-weight: 700; }
+
+.ip-pull > p { margin: 0; }
+.ip-pull > p + p { margin-block-start: .6rem; }

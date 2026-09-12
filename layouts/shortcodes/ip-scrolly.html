@@ -1,0 +1,9 @@
+<div class="ip-scrolly ip-wide">
+  <div class="ip-scrolly-sticky">
+    {{- with .Get "chart" -}}
+      {{- partial "ip-chart.html" (dict "id" . "set" ($.Get "set") "bare" true) -}}
+    {{- end -}}
+    <p class="ip-scrolly-caption" aria-live="polite"></p>
+  </div>
+  <div class="ip-scrolly-steps">{{ .Inner }}</div>
+</div>

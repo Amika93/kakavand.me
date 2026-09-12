@@ -1,0 +1,7 @@
+<div class="ip-step"
+  {{ with .Get "from" }}data-from="{{ . }}"{{ end }}
+  {{ with .Get "to" }}data-to="{{ . }}"{{ end }}
+  {{ with .Get "caption" }}data-caption="{{ . }}"{{ end }}>
+  {{ with .Get "year" }}<p class="ip-step-year">{{ . }}</p>{{ end }}
+  {{ .Inner | markdownify }}
+</div>
