@@ -1,3 +1,7 @@
+{{/* Interactive long-form post.
+     Same title / summary / tags / pagination / TOC furniture as the theme's
+     single.html, with the interactive stylesheet and runtime added. */}}
+
 {{ define "main" }}
 
 {{ with resources.Get "css/interactive.css" }}
@@ -7,9 +11,69 @@
 
 <div class="ip-progress" aria-hidden="true"><span></span></div>
 
-<article class="ip-post single-content">
-  {{ .Content }}
-</article>
+<div {{ if .Param "autonumber" }} class="autonumber" {{ end }}>
+
+  <div class="single-intro-container">
+
+    <h1 class="single-title">{{ .Title }}</h1>
+    {{ with .Param "summary" }}
+    <p class="single-summary">{{ . }}</p>
+    {{ end }}
+
+    <p class="single-readtime">
+      {{ with .Date }}
+      {{ $dateMachine := . | time.Format "2006-01-02T15:04:05-07:00" }}
+      {{ $dateHuman := . | time.Format (default ":date_long" $.Site.Params.singleDateFormat) }}
+      <time datetime="{{ $dateMachine }}"><span class="gregorian-date" data-date="{{ .Format "2006-01-02" }}">{{ $dateHuman }}</span></time>
+      {{ end }}
+
+      {{ if .Param "readTime" }}
+      &nbsp; · &nbsp;
+      {{ .ReadingTime }} دقیقه
+      {{ end }}
+    </p>
+
+  </div>
+
+  {{ if .Param "showTags" }}
+  {{ $taxonomy := "tags" }}
+  {{ with .Param $taxonomy }}
+  <div class="single-tags">
+    {{ range $index, $tag := . }}
+    {{ with $.Site.GetPage (printf "/%s/%s" $taxonomy $tag) -}}
+    <span>
+      <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
+    </span>
+    {{ end }}
+    {{ end }}
+  </div>
+  {{ end }}
+  {{ end }}
+
+  <div class="single-content ip-post">
+    {{ .Content | replaceRE `==([^=]+)==` `<mark>$1</mark>` | safeHTML }}
+  </div>
+
+  {{ partial "subscribe_link.html" . }}
+
+  {{/* Next prev controls */}}
+  {{ if not (.Param "hidePagination") }}
+  {{ partial "pagination-single.html" . }}
+  {{ end }}
+
+  {{/* Back to top */}}
+  {{ if not (.Param "hideBackToTop") }}
+  <div class="back-to-top">
+    <a href="#top">
+      برو به بالای صفحه
+    </a>
+  </div>
+  {{ end }}
+
+  {{/* Floating TOC Button */}}
+  {{ partial "floating-toc.html" . }}
+
+</div>
 
 {{ with resources.Get "js/interactive.js" }}
 {{ $js := . | js.Build (dict "minify" true) | fingerprint }}

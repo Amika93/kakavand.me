@@ -334,15 +334,11 @@ html { scroll-padding-top: 2rem; }
   display: inline-block;
 }
 
-/* animated reveal */
-.ip-chart[data-anim="pending"] .ip-series-line,
-.ip-chart[data-anim="pending"] .ip-series-hl {
-  stroke-dashoffset: var(--ip-len);
-}
-
+/* animated reveal. The dash offsets themselves are set inline by the script
+   and cleared when the reveal ends, so a later highlight change is never
+   clipped to a stale path length. */
 .ip-chart[data-anim="run"] .ip-series-line,
 .ip-chart[data-anim="run"] .ip-series-hl {
-  stroke-dashoffset: 0;
   transition: stroke-dashoffset 1.5s cubic-bezier(.22, .61, .36, 1);
 }
 
@@ -499,31 +495,26 @@ html { scroll-padding-top: 2rem; }
 .ip-verdict p:last-child { margin-block-end: 0; }
 
 /* ---------- findings ---------------------------------------------------- */
+/* A finding is a real markdown heading (so it reaches the table of contents)
+   preceded by a kicker line that carries the rule above it. */
 
-.ip-finding {
-  margin-block: 3.5rem;
-  padding-block-start: 1.6rem;
-  border-block-start: 1px solid var(--ip-line);
-}
-
-.ip-finding-n {
+.ip-kicker {
   font-size: .8em;
   font-weight: 700;
   letter-spacing: .05em;
   color: var(--ip-accent);
-  margin-block: 0 .5rem;
+  margin-block: 3.5rem .5rem;
+  padding-block-start: 1.6rem;
+  border-block-start: 1px solid var(--ip-line);
 }
 
-.ip-finding-title {
+.ip-post h3.ip-finding-h {
   font-size: clamp(1.3em, 3.6vw, 1.6em);
   line-height: 1.4;
   font-weight: 700;
   margin-block: 0 1rem;
   text-wrap: balance;
 }
-
-.ip-finding-body { line-height: 1.85; }
-.ip-finding-body > :first-child { margin-block-start: 0; }
 
 /* ---------- scenario cards --------------------------------------------- */
 

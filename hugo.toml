@@ -74,11 +74,6 @@ url = "/7powers"
 
 # Syntax highligth on code blocks
 [markup]
-# Raw HTML produced by shortcodes must survive `markdownify`, because the
-# interactive post layout nests shortcodes inside shortcodes.
-[markup.goldmark.renderer]
-  unsafe = true
-
 [markup.highlight]
 style = 'algol'
 

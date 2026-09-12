@@ -88,6 +88,28 @@
     }
     function Y(y) { return base - (y / divide) / yTop * plotH; }
 
+    function pathFor(list) {
+      return list.map(function (p, i) {
+        return (i ? 'L' : 'M') + X(p[0]).toFixed(1) + ' ' + Y(p[1]).toFixed(1);
+      }).join(' ');
+    }
+
+    function areaFor(list) {
+      if (!list.length) return '';
+      return pathFor(list) +
+        ' L' + X(list[list.length - 1][0]).toFixed(1) + ' ' + base.toFixed(1) +
+        ' L' + X(list[0][0]).toFixed(1) + ' ' + base.toFixed(1) + ' Z';
+    }
+
+    /* stash the scales so the highlight can be moved without a re-render */
+    cfg._pts = pts;
+    cfg._xMin = xMin;
+    cfg._xMax = xMax;
+    cfg._X = X;
+    cfg._Y = Y;
+    cfg._path = pathFor;
+    cfg._area = areaFor;
+
     var svg = [];
     svg.push('<svg viewBox="0 0 ' + width + ' ' + height + '" direction="ltr" role="img" aria-label="' +
       esc(cfg.alt || cfg.title || '') + '">');
@@ -108,37 +130,12 @@
     svg.push('<line class="ip-axis-line" x1="' + left + '" y1="' + base +
       '" x2="' + right + '" y2="' + base + '"/>');
 
-    function pathFor(list) {
-      return list.map(function (p, i) {
-        return (i ? 'L' : 'M') + X(p[0]).toFixed(1) + ' ' + Y(p[1]).toFixed(1);
-      }).join(' ');
-    }
-
-    function areaFor(list) {
-      if (!list.length) return '';
-      return pathFor(list) +
-        ' L' + X(list[list.length - 1][0]).toFixed(1) + ' ' + base.toFixed(1) +
-        ' L' + X(list[0][0]).toFixed(1) + ' ' + base.toFixed(1) + ' Z';
-    }
-
-    var hasHl = cfg.hlFrom != null && cfg.hlTo != null;
-
-    svg.push('<path class="' + (hasHl ? 'ip-series-area' : 'ip-series-hl-area') +
-      '" d="' + areaFor(pts) + '"/>');
-    svg.push('<path class="' + (hasHl ? 'ip-series-line' : 'ip-series-hl') +
-      '" d="' + pathFor(pts) + '" data-measure="1"/>');
-
-    if (hasHl) {
-      var seg = pts.filter(function (p) { return p[0] >= cfg.hlFrom && p[0] <= cfg.hlTo; });
-      if (seg.length === 1) {
-        svg.push('<circle class="ip-dot" cx="' + X(seg[0][0]) + '" cy="' + Y(seg[0][1]) + '" r="5"/>');
-      } else if (seg.length > 1) {
-        svg.push('<path class="ip-series-hl-area" d="' + areaFor(seg) + '"/>');
-        svg.push('<path class="ip-series-hl" d="' + pathFor(seg) + '"/>');
-        var tip = seg[seg.length - 1];
-        svg.push('<circle class="ip-dot" cx="' + X(tip[0]) + '" cy="' + Y(tip[1]) + '" r="4.5"/>');
-      }
-    }
+    /* full series, muted; the highlight rides on top and is updated in place */
+    svg.push('<path class="ip-series-area" d="' + areaFor(pts) + '"/>');
+    svg.push('<path class="ip-series-line" d="' + pathFor(pts) + '" data-measure="1"/>');
+    svg.push('<path class="ip-series-hl-area" data-hl="area" d=""/>');
+    svg.push('<path class="ip-series-hl" data-hl="line" d=""/>');
+    svg.push('<circle class="ip-dot" data-hl="dot" r="4.5" cx="-99" cy="-99" opacity="0"/>');
 
     (cfg.annotations || []).forEach(function (a) {
       var match = pts.filter(function (p) { return p[0] === a.x; })[0];
@@ -158,6 +155,34 @@
 
     svg.push('</svg>');
     return svg.join('');
+  }
+
+  /* Moves the accent band without touching the DOM structure, so stepping
+     through a scrolly never re-renders (and never flickers) the chart. */
+  function updateHighlight(host, cfg) {
+    if (!cfg._pts) return;
+    var area = host.querySelector('[data-hl="area"]');
+    var line = host.querySelector('[data-hl="line"]');
+    var dot = host.querySelector('[data-hl="dot"]');
+    if (!area || !line || !dot) return;
+
+    var from = cfg.hlFrom;
+    var to = cfg.hlTo;
+    if (from == null || to == null) { from = cfg._xMin; to = cfg._xMax; }
+
+    var seg = cfg._pts.filter(function (p) { return p[0] >= from && p[0] <= to; });
+    if (!seg.length) {
+      area.setAttribute('d', '');
+      line.setAttribute('d', '');
+      dot.setAttribute('opacity', '0');
+      return;
+    }
+    area.setAttribute('d', cfg._area(seg));
+    line.setAttribute('d', cfg._path(seg));
+    var tip = seg[seg.length - 1];
+    dot.setAttribute('cx', cfg._X(tip[0]).toFixed(1));
+    dot.setAttribute('cy', cfg._Y(tip[1]).toFixed(1));
+    dot.setAttribute('opacity', '1');
   }
 
   /* ------------------------------------------------------------ bar charts */
@@ -227,35 +252,66 @@
 
   var charts = {};
 
+  function animateLines(host) {
+    var lines = [];
+    var main = host.querySelector('[data-measure]');
+    var hl = host.querySelector('.ip-series-hl');
+    if (main) lines.push(main);
+    if (hl) lines.push(hl);
+
+    lines.forEach(function (l) {
+      if (!l.getTotalLength) return;
+      var len = Math.ceil(l.getTotalLength());
+      if (!len) return;
+      l.style.strokeDasharray = len;
+      l.style.strokeDashoffset = len;
+    });
+
+    host.setAttribute('data-anim', 'pending');
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        lines.forEach(function (l) { l.style.strokeDashoffset = '0'; });
+        host.setAttribute('data-anim', 'run');
+        /* Clear the dash once the reveal finishes, otherwise a later
+           highlight change would be clipped to the old path length. */
+        setTimeout(function () {
+          lines.forEach(function (l) {
+            l.style.strokeDasharray = '';
+            l.style.strokeDashoffset = '';
+          });
+          host.removeAttribute('data-anim');
+        }, 1800);
+      });
+    });
+  }
+
   function draw(host, animate) {
     var cfg = charts[host.getAttribute('data-chart-id')];
     if (!cfg) return;
     var width = Math.max(280, Math.round(host.getBoundingClientRect().width) || 600);
     cfg._width = width;
     host.innerHTML = cfg.type === 'bar' ? renderBar(cfg, width) : renderLine(cfg, width);
-
+    if (cfg.type !== 'bar') updateHighlight(host, cfg);
     if (animate && !reduceMotion) {
-      var line = host.querySelector('[data-measure]');
-      if (line && line.getTotalLength) {
-        var len = Math.ceil(line.getTotalLength());
-        host.style.setProperty('--ip-len', len);
-        line.style.strokeDasharray = len;
-        var hl = host.querySelector('.ip-series-hl');
-        if (hl && hl.getTotalLength) {
-          var hlen = Math.ceil(hl.getTotalLength());
-          hl.style.strokeDasharray = hlen;
-          hl.style.strokeDashoffset = hlen;
-        }
-      }
-      host.setAttribute('data-anim', 'pending');
-      requestAnimationFrame(function () {
+      if (cfg.type === 'bar') {
+        host.setAttribute('data-anim', 'pending');
         requestAnimationFrame(function () {
-          var h = host.querySelector('.ip-series-hl');
-          if (h) h.style.strokeDashoffset = 0;
-          host.setAttribute('data-anim', 'run');
+          requestAnimationFrame(function () { host.setAttribute('data-anim', 'run'); });
         });
-      });
+      } else {
+        animateLines(host);
+      }
     }
+  }
+
+  /* Highlight-only update: no re-render, so stepping never flickers. */
+  function setRange(host, from, to) {
+    var cfg = charts[host.getAttribute('data-chart-id')];
+    if (!cfg || cfg.type === 'bar') return;
+    if (cfg.hlFrom === from && cfg.hlTo === to) return;
+    cfg.hlFrom = from;
+    cfg.hlTo = to;
+    updateHighlight(host, cfg);
   }
 
   function initCharts() {
@@ -275,7 +331,6 @@
       draw(host, false);
     });
 
-    /* animate when scrolled into view, once */
     if ('IntersectionObserver' in window) {
       var io = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
@@ -290,16 +345,10 @@
         });
       }, { threshold: 0.25 });
       hosts.forEach(function (h) { io.observe(h); });
-    } else {
-      hosts.forEach(function (h) {
-        var cfg = charts[h.getAttribute('data-chart-id')];
-        if (cfg) cfg._drawn = true;
-      });
     }
 
-    /* redraw on width change */
     var timer;
-    function onResize() {
+    window.addEventListener('resize', function () {
       clearTimeout(timer);
       timer = setTimeout(function () {
         hosts.forEach(function (host) {
@@ -309,53 +358,77 @@
           if (Math.abs(w - (cfg._width || 0)) > 8) draw(host, false);
         });
       }, 180);
-    }
-    window.addEventListener('resize', onResize);
+    });
   }
 
   /* ------------------------------------------------------------- scrolly */
+  /* Exactly one step is active at any time: the one crossing the reading
+     line. Driven by scroll position rather than IntersectionObserver, so the
+     paragraph and the chart change on the same frame at every screen size. */
 
   function initScrolly() {
     var blocks = [].slice.call(document.querySelectorAll('.ip-scrolly'));
+    if (!blocks.length) return;
+
+    var stacked = window.matchMedia('(max-width: 859px)');
+
     blocks.forEach(function (block) {
       var steps = [].slice.call(block.querySelectorAll('.ip-step'));
       var host = block.querySelector('.ip-chart[data-chart-id]');
+      var sticky = block.querySelector('.ip-scrolly-sticky');
       var caption = block.querySelector('.ip-scrolly-caption');
       if (!steps.length) return;
 
-      function activate(step) {
+      var current = -1;
+      var ticking = false;
+
+      /* Where a step counts as "being read". On the stacked layout the chart
+         sits on top, so aim below it instead of at the bare middle. */
+      function readingLine() {
+        var vh = window.innerHeight;
+        if (!stacked.matches || !sticky) return vh * 0.5;
+        var bottom = sticky.getBoundingClientRect().bottom;
+        var top = Math.max(0, Math.min(bottom, vh));
+        return top + (vh - top) * 0.42;
+      }
+
+      function pick() {
+        var line = readingLine();
+        var best = 0;
+        var bestDist = Infinity;
+        for (var i = 0; i < steps.length; i++) {
+          var r = steps[i].getBoundingClientRect();
+          if (r.top <= line && r.bottom >= line) return i;
+          var d = r.top > line ? r.top - line : line - r.bottom;
+          if (d < bestDist) { bestDist = d; best = i; }
+        }
+        return best;
+      }
+
+      function apply(i) {
+        if (i === current) return;
+        current = i;
+        var step = steps[i];
         steps.forEach(function (s) { s.classList.toggle('is-active', s === step); });
         if (caption) caption.textContent = step.getAttribute('data-caption') || '';
         if (!host) return;
-        var cfg = charts[host.getAttribute('data-chart-id')];
-        if (!cfg) return;
         var from = step.getAttribute('data-from');
         var to = step.getAttribute('data-to');
-        cfg.hlFrom = from === null ? null : +from;
-        cfg.hlTo = to === null ? null : +to;
-        draw(host, false);
+        setRange(host, from === null ? null : +from, to === null ? null : +to);
       }
 
-      if (!('IntersectionObserver' in window)) {
-        activate(steps[0]);
-        return;
-      }
-
-      var io = new IntersectionObserver(function (entries) {
-        var best = null;
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting && (!best || entry.intersectionRatio > best.intersectionRatio)) {
-            best = entry;
-          }
+      function onScroll() {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(function () {
+          apply(pick());
+          ticking = false;
         });
-        if (best) activate(best.target);
-      }, {
-        rootMargin: '-45% 0px -45% 0px',
-        threshold: [0, 0.25, 0.5, 0.75, 1]
-      });
+      }
 
-      steps.forEach(function (s) { io.observe(s); });
-      activate(steps[0]);
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll);
+      apply(pick());
     });
   }
 

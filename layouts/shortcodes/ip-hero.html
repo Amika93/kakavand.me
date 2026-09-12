@@ -1,5 +1,0 @@
-<header class="ip-hero">
-  {{ with .Get "eyebrow" }}<p class="ip-hero-eyebrow">{{ . }}</p>{{ end }}
-  <h1 class="ip-hero-title">{{ .Get "title" }}</h1>
-  <div class="ip-hero-lede">{{ .Inner | markdownify }}</div>
-</header>
