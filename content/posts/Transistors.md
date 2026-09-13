@@ -5,6 +5,8 @@ tags:
   - youtube
   - video
 summary: انقلاب سیلیکونی و قطعه‌ای که دنیای امروز ما رو شکل داد
+aliases:
+  - /videos/transistors/
 ---
 ![انقلاب سیلیکونی و قطعه‌ای که دنیای امروز ما رو شکل داد | قسمت ۱ تاریخ تراشه‌ها](/media/Transistor.jpg)
 
