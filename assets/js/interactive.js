@@ -53,9 +53,9 @@
   }
 
   /* ----------------------------------------------------------- line charts */
-  /* Geometry is always computed LTR (svg direction="ltr") so text-anchor is
-     unambiguous. The time axis is mirrored by hand: earliest year on the RIGHT,
-     value axis on the right, matching right-to-left reading order. */
+  /* Charts read left-to-right even though the page is RTL: time runs forward
+     to the right and the value axis sits on the left, which is how a time
+     series is read. svg direction="ltr" keeps text-anchor unambiguous. */
 
   function clamp(v, lo, hi) { return Math.max(lo, Math.min(v, hi)); }
 
@@ -63,8 +63,8 @@
     var height = Math.max(250, Math.min(Math.round(width * 0.54), 420));
     var padT = 26;
     var padB = 40;
-    var padR = 52;   /* value axis lives here, on the right */
-    var padL = 14;
+    var padR = 16;
+    var padL = 52;   /* value axis lives here, on the left */
 
     var pts = cfg.points.slice().sort(function (a, b) { return a[0] - b[0]; });
     var xs = pts.map(function (p) { return p[0]; });
@@ -84,7 +84,7 @@
 
     function X(x) {
       if (xMax === xMin) return left + plotW / 2;
-      return right - (x - xMin) / (xMax - xMin) * plotW;
+      return left + (x - xMin) / (xMax - xMin) * plotW;
     }
     function Y(y) { return base - (y / divide) / yTop * plotH; }
 
@@ -118,8 +118,8 @@
       var y = base - (t / yTop) * plotH;
       svg.push('<line class="ip-grid-line" x1="' + left + '" y1="' + y +
         '" x2="' + right + '" y2="' + y + '"/>');
-      svg.push('<text class="ip-tick" x="' + (right + 8) + '" y="' + (y + 4) +
-        '" text-anchor="start">' + num(t, cfg.decimals || 0) + '</text>');
+      svg.push('<text class="ip-tick" x="' + (left - 8) + '" y="' + (y + 4) +
+        '" text-anchor="end">' + num(t, cfg.decimals || 0) + '</text>');
     });
 
     var xTicks = cfg.xTicks && cfg.xTicks.length ? cfg.xTicks : [xMin, xMax];
@@ -193,8 +193,8 @@
     var height = Math.max(250, Math.min(Math.round(width * 0.52), 400));
     var padT = 32;
     var padB = cfg.hasSublabels ? 56 : 42;
-    var padR = 52;
-    var padL = 14;
+    var padR = 16;
+    var padL = 52;   /* value axis on the left, same as the line charts */
     var divide = cfg.divide || 1;
     var maxVal = Math.max.apply(null, bars.map(function (b) { return b.value; }));
     var ticks = axisTicks(maxVal / divide, cfg.tickCount || 4);
@@ -215,13 +215,13 @@
       var y = base - (t / yTop) * plotH;
       svg.push('<line class="ip-grid-line" x1="' + left + '" y1="' + y +
         '" x2="' + right + '" y2="' + y + '"/>');
-      svg.push('<text class="ip-tick" x="' + (right + 8) + '" y="' + (y + 4) +
-        '" text-anchor="start">' + num(t, cfg.decimals || 0) + '</text>');
+      svg.push('<text class="ip-tick" x="' + (left - 8) + '" y="' + (y + 4) +
+        '" text-anchor="end">' + num(t, cfg.decimals || 0) + '</text>');
     });
 
-    /* earliest / first item on the right */
+    /* earliest / first item on the left */
     bars.forEach(function (b, i) {
-      var cx = right - (i + 0.5) * slot;
+      var cx = left + (i + 0.5) * slot;
       var h = (b.value / divide) / yTop * plotH;
       var y = base - h;
       var cls = 'ip-bar' + (b.hl ? ' is-hl' : '') + (b.alt ? ' is-alt' : '');
